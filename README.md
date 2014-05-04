@@ -15,14 +15,14 @@ self_systeem
 
 ## Description
 
-###Definition:
-####self systeem
+###Definition: self-systeem
 noun
-1. a realistic respect for or favorable impression of one's system
-2. confidence in one's system worth or abilities
-3. system-respect
 
-Do you have low self systeem? Don't worry.  This gem is here to help.
+1.  a realistic respect for or favorable impression of one's system
+2.  confidence in one's system worth or abilities
+3.  system-respect
+
+Do you have low self-systeem? Don't worry.  This gem is here to help.
 
 self_systeem allows you to record a users interaction with your rails app in a
 development enviornment and automatically creates system tests based on the
@@ -50,13 +50,28 @@ database is persisted while runnin all these tests.  That means that when you ar
 your tests it is essentially a recreation of all of those users actions in sequence.
 
 Possitive affirmations:
-"Today, my system choose to see love instead of fear"
-"I possess the qualities needed to be extremely successful"
+*  "Today, my system choose to see love instead of fear"
+*  "My system possess the qualities needed to be extremely successful"
 
 Feeling better?
 
-Well if those didn't work you can always check out the affirmations that are built
-in systeem_booster.yml.  That should do the trick.
+Well if those didn't work you can always check out the affirmations that you have built in systeem_booster.yml.  That should do the trick.
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem "self_systeem"
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install self_systeem
 
 ## Configuration
 
@@ -85,27 +100,6 @@ i.e.
   allow_concurrency: true
   min_messages: warning
 ```
-
-## Examples
-
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem "self_systeem"
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install self_systeem
-
-## Requirements
 
 ## Donating
 Support this project and [others by mfpiccolo][gittip-mfpiccolo] via [gittip][gittip-mfpiccolo].
