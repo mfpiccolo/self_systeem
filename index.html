@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Self systeem by mfpiccolo</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Self systeem</h1>
+        <h2>Record user interactions to build system tests.</h2>
+        <a href="https://github.com/mfpiccolo/self_systeem" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="self_systeem" class="anchor" href="#self_systeem"><span class="octicon octicon-link"></span></a>self_systeem</h1>
+
+<table>
+<thead><tr>
+<th>Project</th>
+<th>Gem Release</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Gem name</td>
+<td>self_systeem</td>
+</tr>
+<tr>
+<td>License</td>
+<td><a href="LICENSE.txt">MIT</a></td>
+</tr>
+<tr>
+<td>Version</td>
+<td><a href="http://badge.fury.io/rb/self_systeem"><img src="https://badge.fury.io/rb/self_systeem.png" alt="Gem Version"></a></td>
+</tr>
+<tr>
+<td>Continuous Integration</td>
+<td><a href="https://travis-ci.org/mfpiccolo/self_systeem"><img src="https://travis-ci.org/mfpiccolo/self_systeem.png?branch=master" alt="Build Status"></a></td>
+</tr>
+<tr>
+<td>Test Coverage</td>
+<td><a href="https://coveralls.io/r/mfpiccolo/self_systeem?branch=coveralls"><img src="https://coveralls.io/repos/mfpiccolo/self_systeem/badge.png?branch=master" alt="Coverage Status"></a></td>
+</tr>
+<tr>
+<td>Grade</td>
+<td><a href="https://codeclimate.com/github/mfpiccolo/self_systeem"><img src="https://codeclimate.com/github/mfpiccolo/self_systeem.png" alt="Code Climate"></a></td>
+</tr>
+<tr>
+<td>Dependencies</td>
+<td><a href="https://gemnasium.com/mfpiccolo/self_systeem"><img src="https://gemnasium.com/mfpiccolo/self_systeem.png" alt="Dependency Status"></a></td>
+</tr>
+<tr>
+<td>Homepage</td>
+<td><a href="http://mfpiccolo.github.io/self_systeem">http://mfpiccolo.github.io/self_systeem</a></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><a href="http://rdoc.info/github/mfpiccolo/self_systeem/frames">http://rdoc.info/github/mfpiccolo/self_systeem/frames</a></td>
+</tr>
+<tr>
+<td>Issues</td>
+<td><a href="https://github.com/mfpiccolo/self_systeem/issues">https://github.com/mfpiccolo/self_systeem/issues</a></td>
+</tr>
+</tbody>
+</table><h2>
+<a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h2>
+
+<h3>
+<a name="definition-self-systeem" class="anchor" href="#definition-self-systeem"><span class="octicon octicon-link"></span></a>Definition: self-systeem</h3>
+
+<p>noun</p>
+
+<ol>
+<li> a realistic respect for or favorable impression of one's system</li>
+<li> confidence in one's system worth or abilities</li>
+<li> system-respect</li>
+</ol><p>Do you have low self-systeem? Don't worry.  This gem is here to help.</p>
+
+<p>self_systeem allows you to record a users interaction with your rails app in a
+development enviornment and automatically creates system tests based on the
+recordings.</p>
+
+<p>It is simple.  Walk through the app from sart to finish.  Cover as much as you
+feel comfortable.  That't it.  You just built a system test.  Congrats!</p>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<p>After setting up self_systeem (see configuration below) use the generator to create
+the system test directory.</p>
+
+<p><code>rails g self_systeem:test</code></p>
+
+<p>Then run <code>SELF_SYSTEEM=true rails s</code></p>
+
+<p>Now open a new browser preferably in incognito mode so you have fresh session.
+Walk through your app like a normal user would.  While you are doing this positive
+affirmations are being built in "test/system/support/systeem_booster.yml"</p>
+
+<p>Now just run the test file with <code>ruby -Itest test/system/systeem_test.rb</code> and watch
+you tests turn green.  What does this really get you?  Well for one the session and
+database is persisted while runnin all these tests.  That means that when you are running
+your tests it is essentially a recreation of all of those users actions in sequence.</p>
+
+<p>Possitive affirmations:</p>
+
+<ul>
+<li> "Today, my system choose to see love instead of fear"</li>
+<li> "My system possess the qualities needed to be extremely successful"</li>
+</ul><p>Feeling better?</p>
+
+<p>Well if those didn't work you can always check out the affirmations that you have built in systeem_booster.yml.  That should do the trick.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="n">gem</span> <span class="s2">"self_systeem"</span>
+</pre></div>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install self_systeem
+</code></pre>
+
+<h2>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p>To use the generator run:</p>
+
+<pre><code>$ rails g self_systeem:test
+</code></pre>
+
+<p>This will set up a system folder under test with a test file and some support files.</p>
+
+<p>Add this line to development.rb</p>
+
+<p><code>config.middleware.use "SelfSysteem::AffirmationBuilder" if ENV["SELF_SYSTEEM"].present?</code></p>
+
+<p>Temporarily change you database.yml so the development database uses the test database.
+This step is only while you build systeem_booster.yml file.  Chage it back when you are done.</p>
+
+<p>i.e.</p>
+
+<div class="highlight highlight-ruby"><pre>  <span class="ss">development</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">dev</span>
+  <span class="ss">adapter</span><span class="p">:</span> <span class="n">postgresql</span>
+  <span class="ss">encoding</span><span class="p">:</span> <span class="n">unicode</span>
+  <span class="ss">database</span><span class="p">:</span> <span class="n">app_test</span> <span class="c1"># Change this back after creating systeem_booster.yml</span>
+  <span class="ss">pool</span><span class="p">:</span> <span class="mi">5</span>
+  <span class="ss">username</span><span class="p">:</span> <span class="o">&lt;%=</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">"USER"</span><span class="o">]</span> <span class="o">%&gt;</span>
+  <span class="ss">password</span><span class="p">:</span>
+  <span class="n">allow_concurrency</span><span class="p">:</span> <span class="kp">true</span>
+  <span class="n">min_messages</span><span class="p">:</span> <span class="n">warning</span>
+</pre></div>
+
+<h2>
+<a name="the-future" class="anchor" href="#the-future"><span class="octicon octicon-link"></span></a>The Future</h2>
+
+<ol>
+<li> Refactoring would be nice.  2.1 from codeclimate is no good.</li>
+<li> Boost test coverage.</li>
+<li> Ensure that this works with most setups. Only works with minitest, would be nice to have rspec and several rails versions working.</li>
+<li> Make the test database switch automatic when running rails with "SELF_SYSTEEM" env.</li>
+<li> Allow more configurable options possibly to allow devs to do more targeted testing post systeem_booster.yml build.</li>
+<li> Option to do response body matching of some sort.</li>
+<li> Open to suggestions.  Lets start boosting that self-systeem!</li>
+</ol><h2>
+<a name="donating" class="anchor" href="#donating"><span class="octicon octicon-link"></span></a>Donating</h2>
+
+<p>Support this project and <a href="https://www.gittip.com/mfpiccolo/">others by mfpiccolo</a> via <a href="https://www.gittip.com/mfpiccolo/">gittip</a>.</p>
+
+<h2>
+<a name="copyright" class="anchor" href="#copyright"><span class="octicon octicon-link"></span></a>Copyright</h2>
+
+<p>Copyright (c) 2013 Mike Piccolo</p>
+
+<p>See <a href="LICENSE.txt">LICENSE.txt</a> for details.</p>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it ( <a href="http://github.com/">http://github.com/</a>/self_systeem/fork )</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol><p><a href="http://githalytics.com/mfpiccolo/self_systeem"><img src="https://cruel-carlota.pagodabox.com/3d22924e211bdc891d3ad124e085a595" alt="githalytics.com alpha" title="githalytics.com"></a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/mfpiccolo/self_systeem/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/mfpiccolo/self_systeem/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/mfpiccolo/self_systeem"></a> is maintained by <a href="https://github.com/mfpiccolo">mfpiccolo</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
