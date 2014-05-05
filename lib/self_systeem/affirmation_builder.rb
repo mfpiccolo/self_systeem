@@ -6,12 +6,11 @@ module SelfSysteem
     end
 
     def call(env)
-      # TODO find out why the counts are so high in @_templates and @_layouts
-      setup_subscriptions
 
       if env["REQUEST_PATH"].match(/\/assets/)
         status, headers, response = @app.call(env)
       else
+        setup_subscriptions
         status, headers, response = @app.call(env)
         request_path = env["REQUEST_PATH"]
         request_method = env["REQUEST_METHOD"]
@@ -51,28 +50,17 @@ module SelfSysteem
         File.open(Rails.root.to_s + "/test/system/support/systeem_booster.yml", 'w') do |file|
           file.write(boosters.to_yaml)
         end
+
+        teardown_subscriptions
       end
 
       [status, headers, [response.try(:body)].flatten]
     end
 
     def setup_instance_varaibles
-      @relevant_instance_varaibles = @controller_instance
-        .instance_variable_names.reject {|v| v[/@_/] || v == "@marked_for_same_origin_verification"}
-      @instance_variable_objects = {}
-      @relevant_instance_varaibles.each do |v|
-        iv_val = @controller_instance.instance_variable_get(v)
-        if iv_val.class.name.match(/ActiveRecord::AssociationRelation|ActiveRecord::Associations::CollectionProxy/)
-          @instance_variable_objects.merge!(v.to_s => { })
-          iv_val.each do |o|
-            @instance_variable_objects[v.to_s].merge!({ o.to_s => o.attributes })
-          end
-        elsif iv_val.is_a?(ActiveRecord::Base)
-          @instance_variable_objects.merge!({ v.to_s => iv_val.attributes })
-        else
-          @instance_variable_objects.merge!({ v.to_s => iv_val.to_s })
-        end
-      end
+      builder = SelfSysteem::InstanceVariablesBuilder.call(@controller_instance)
+      @relevant_instance_varaibles = builder.relevant_instance_varaibles
+      @instance_variable_objects = builder.instance_variable_objects
     end
 
     def setup_subscriptions
@@ -114,5 +102,11 @@ module SelfSysteem
         end
       end
     end
+
+    def teardown_subscriptions
+      ActiveSupport::Notifications.unsubscribe("render_template.action_view")
+      ActiveSupport::Notifications.unsubscribe("!render_template.action_view")
+    end
+
   end
 end

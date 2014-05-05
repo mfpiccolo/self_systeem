@@ -1,7 +1,7 @@
 require "./test/system/support/systeem_config.rb"
 
 describe "start_db_cleaner" do
-  before { DatabaseCleaner.start }
+  it { DatabaseCleaner.start }
 end
 
 SysteemConfig::Affirmations.each do |a|
@@ -14,33 +14,19 @@ SysteemConfig::Affirmations.each do |a|
     end
 
     it {
-      # Move this somewhere, also used in affirmation_builder.rb
       controller_instance = response.request.env["action_controller.instance"]
-      relevant_instance_varaibles = controller_instance
-        .instance_variable_names.reject {|v| v[/@_/] || v == "@marked_for_same_origin_verification"}
-      instance_variable_objects = {}
-      relevant_instance_varaibles.each do |v|
-        iv_val = controller_instance.instance_variable_get(v)
-        if iv_val.class.name.match(/ActiveRecord::AssociationRelation|ActiveRecord::Associations::CollectionProxy/)
-          instance_variable_objects.merge!(v.to_s => { })
-          iv_val.each do |o|
-            instance_variable_objects[v.to_s].merge!({ o.to_s => o.attributes })
-          end
-        elsif iv_val.is_a?(ActiveRecord::Base)
-          instance_variable_objects.merge!({ v.to_s => iv_val.attributes })
-        else
-          instance_variable_objects.merge!({ v.to_s => iv_val.to_s })
-        end
-      end
+      builder = SelfSysteem::InstanceVariablesBuilder.call(controller_instance)
+      relevant_instance_varaibles = builder.relevant_instance_varaibles
+      instance_variable_objects = builder.instance_variable_objects
 
       assert_response a[:status]
       assert_equal(a[:relevant_instance_varaibles], relevant_instance_varaibles.to_s)
-      # TODO only the keys match, should match the counts as well
-      assert_equal(a[:templates].keys, @_templates.keys)
+      assert_equal(a[:instance_variable_objects], instance_variable_objects)
+      assert_equal(a[:templates], @_templates)
     }
   end
 end
 
 describe "db_cleaner_clean" do
-  before { DatabaseCleaner.clean }
+  it { DatabaseCleaner.clean }
 end
