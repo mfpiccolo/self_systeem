@@ -5,6 +5,10 @@ require 'test_helper_dummy'
 require "rails/test_help"
 require "minitest/spec"
 require "database_cleaner"
+
+require 'coveralls'
+Coveralls.wear!('rails')
+
 Dir[File.join("./test/support/**/authentication.rb")].sort.each { |f| require f }
 
 DatabaseCleaner.strategy = :truncation
