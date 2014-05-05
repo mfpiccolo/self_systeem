@@ -29,7 +29,7 @@ development enviornment and automatically creates system tests based on the
 recordings.
 
 It is simple.  Walk through the app from sart to finish.  Cover as much as you
-feel comfortable.  That't it.  You just built a system test.  Congrats!
+feel comfortable.  That's it.  You just built a system test.  Congrats!
 
 ## Features
 
@@ -45,9 +45,25 @@ Walk through your app like a normal user would.  While you are doing this positi
 affirmations are being built in "test/system/support/systeem_booster.yml"
 
 Now just run the test file with `ruby -Itest test/system/systeem_test.rb` and watch
-you tests turn green.  What does this really get you?  Well for one the session and
-database is persisted while runnin all these tests.  That means that when you are running
-your tests it is essentially a recreation of all of those users actions in sequence.
+you tests turn green.
+
+## Test Coverage
+
+What do these tests really get you?
+
+Well for one the session and database is persisted while runnin all these tests.
+That means that when you are running your tests it is essentially a recreation of
+all of those users actions in sequence.
+
+As far as the implementation goes, it is simply a sequence of controller tests that
+are strung together and share session data and database data.
+
+There are four assertations that are being called.
+
+1.  Statuses match.
+2.  The proper isntance varables are being set.
+3.  The instance variable objects match.  (only checks id and _id relationship data for active record objects)
+4.  The proper templates are being loaded.
 
 Possitive affirmations:
 *  "Today, my system choose to see love instead of fear"
@@ -100,6 +116,18 @@ i.e.
   allow_concurrency: true
   min_messages: warning
 ```
+
+## The Future
+
+1.  Refactoring would be nice.  2.1 from codeclimate is no good.
+2.  Boost test coverage.
+3.  Ensure that this works with most setups. Only works with minitest, would be nice to have rspec and several rails versions working.
+4.  Make the test database switch automatic when running rails with "SELF_SYSTEEM" env.
+5.  Allow more configurable options possibly to allow devs to do more targeted testing post systeem_booster.yml build.
+6.  Option to do response body matching of some sort.
+7.  Allow for multiple yaml files to be built.
+8.  Allow devs to save session and database state to begin a test run. i.e. (For a new file called "create_posts.yml" start with database and session after ["sign_up.yml", "create_profile.yml", "create_blog.yml"])
+9.  Open to suggestions.  Lets start boosting that self-systeem!
 
 ## Donating
 Support this project and [others by mfpiccolo][gittip-mfpiccolo] via [gittip][gittip-mfpiccolo].
