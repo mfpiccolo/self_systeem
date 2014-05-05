@@ -93,7 +93,7 @@ i.e.
   development: &dev
   adapter: postgresql
   encoding: unicode
-  database: app_test # Change this back after creating the
+  database: app_test # Change this back after creating systeem_booster.yml
   pool: 5
   username: <%= ENV["USER"] %>
   password:
