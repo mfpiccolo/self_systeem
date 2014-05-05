@@ -1,4 +1,4 @@
-require "./test/system/support/systeem_config.rb"
+require "./test/dummy_tests/system/support/systeem_config.rb"
 
 describe "start_db_cleaner" do
   it { DatabaseCleaner.start }
@@ -8,7 +8,7 @@ SysteemConfig::Affirmations.each do |a|
   describe a[:controller_class_name].constantize do
     before do
       # Only needed if devise
-      @request.env["devise.mapping"] = Devise.mappings[:user]
+      # @request.env["devise.mapping"] = Devise.mappings[:user]
       send(a[:request_method].downcase.to_sym, a[:action], a[:request_parameters], SysteemConfig::Session)
       SysteemConfig::Session.merge! session
     end
