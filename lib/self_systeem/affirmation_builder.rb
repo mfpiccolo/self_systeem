@@ -1,3 +1,5 @@
+require "yaml_db_synch"
+
 module SelfSysteem
   class AffirmationBuilder
 
@@ -43,7 +45,8 @@ module SelfSysteem
         file_name = ENV["SYSTEEM"] + ".yml"
 
         unless File.exist?(path + file_name)
-          FileUtils.mkdir_p path
+          full_path = (path + file_name).match(/^(.*\/)?(?:$|(.+?)(?:(\.[^.]*$)|$))/)[1]
+          FileUtils.mkdir_p full_path
           File.open(path + file_name, "w") { |file| file.write({ affirmations: [] }.to_yaml) }
         end
 
@@ -53,6 +56,8 @@ module SelfSysteem
         File.open(path + file_name, 'w') do |file|
           file.write(boosters.to_yaml)
         end
+
+        YamlDbSynch.dump(file_name)
 
         teardown_subscriptions
       end

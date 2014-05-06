@@ -9,10 +9,14 @@ module SerializationHelper
       @extension = helper.extension
     end
 
-    def dump(dir, filename)
+    def dump(file)
       disable_logger
-      FileUtils.mkdir_p dir
-      @dumper.dump(File.new(filename, "w"))
+      unless File.exist?(file)
+        full_path = (file).match(/^(.*\/)?(?:$|(.+?)(?:(\.[^.]*$)|$))/)[1]
+        FileUtils.mkdir_p full_path
+      end
+      f = File.open(file, "w")
+      @dumper.dump(f)
       reenable_logger
     end
 

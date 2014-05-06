@@ -7,7 +7,7 @@ namespace :db do
 
   namespace :data do
     def db_dump_data_file (extension = "yml", file = "data")
-      "#{dump_dir}/#{file}_db.#{extension}"
+      "#{dump_dir}/#{file}.#{extension}"
     end
 
     def dump_dir(dir = "")
