@@ -38,7 +38,7 @@ the system test directory.
 
 `rails g self_systeem:test`
 
-Then run `SELF_SYSTEEM=true rails s`
+Then run `SYSTEEM=true rails s`
 
 Now open a new browser preferably in incognito mode so you have fresh session.
 Walk through your app like a normal user would.  While you are doing this positive
@@ -99,7 +99,7 @@ This will set up a system folder under test with a test file and some support fi
 
 Add this line to development.rb
 
-`config.middleware.use "SelfSysteem::AffirmationBuilder" if ENV["SELF_SYSTEEM"].present?`
+`config.middleware.use "SelfSysteem::AffirmationBuilder" if ENV["SYSTEEM"].present?`
 
 Temporarily change you database.yml so the development database uses the test database.
 This step is only while you build systeem_booster.yml file.  Chage it back when you are done.
@@ -122,7 +122,7 @@ i.e.
 1.  Refactoring would be nice.  2.1 from codeclimate is no good.
 2.  Boost test coverage.
 3.  Ensure that this works with most setups. Only works with minitest, would be nice to have rspec and several rails versions working.
-4.  Make the test database switch automatic when running rails with "SELF_SYSTEEM" env.
+4.  Make the test database switch automatic when running rails with "SYSTEEM" env.
 5.  Allow more configurable options possibly to allow devs to do more targeted testing post systeem_booster.yml build.
 6.  Option to do response body matching of some sort.
 7.  Allow for multiple yaml files to be built.

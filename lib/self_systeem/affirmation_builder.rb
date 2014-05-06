@@ -39,15 +39,18 @@ module SelfSysteem
              instance_variable_objects: @instance_variable_objects
         }
 
-        unless File.exist?(Rails.root.to_s + "/test/system/support/systeem_booster.yml")
-          FileUtils.mkdir_p Rails.root.to_s + "/test/system/support"
-          File.open(Rails.root.to_s + "/test/system/support/systeem_booster.yml", "w") { |file| file.write({ affirmations: [] }.to_yaml) }
+        path = Rails.root.to_s + "/test/system/support/"
+        file_name = ENV["SYSTEEM"] + ".yml"
+
+        unless File.exist?(path + file_name)
+          FileUtils.mkdir_p path
+          File.open(path + file_name, "w") { |file| file.write({ affirmations: [] }.to_yaml) }
         end
 
-        boosters = YAML.load_file(Rails.root.to_s + "/test/system/support/systeem_booster.yml")
+        boosters = YAML.load_file(path + file_name)
         boosters[:affirmations] << booster
 
-        File.open(Rails.root.to_s + "/test/system/support/systeem_booster.yml", 'w') do |file|
+        File.open(path + file_name, 'w') do |file|
           file.write(boosters.to_yaml)
         end
 

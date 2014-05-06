@@ -8643,3 +8643,41 @@ Processing by UsersController#index as HTML
   [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
 Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+------------------------------------------
+ApplicationController: test_0001_anonymous
+------------------------------------------
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" varchar(255), "user_id" integer) 
+Processing by ApplicationController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+------------------------------------
+UsersController: test_0001_anonymous
+------------------------------------
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "posts"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" varchar(255), "user_id" integer) 
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users"
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+------------------------------------------
+ApplicationController: test_0001_anonymous
+------------------------------------------
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" varchar(255), "user_id" integer) 
+Processing by ApplicationController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+------------------------------------
+UsersController: test_0001_anonymous
+------------------------------------
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "posts"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" varchar(255), "user_id" integer) 
+Processing by UsersController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms)
