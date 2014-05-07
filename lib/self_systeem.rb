@@ -2,6 +2,7 @@ require "self_systeem/version"
 require "self_systeem/affirmation_builder"
 require "self_systeem/instance_variables_builder"
 require "yaml_db"
+require "action_controller_monkey"
 
 module SelfSysteem
   def self.included(base)

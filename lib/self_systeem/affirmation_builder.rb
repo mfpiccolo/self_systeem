@@ -13,18 +13,20 @@ module SelfSysteem
         status, headers, response = @app.call(env)
       else
         setup_subscriptions
+
+        # middleware api
         status, headers, response = @app.call(env)
+
+        # setup vars for hash to test agains later
         request_path = env["REQUEST_PATH"]
         request_method = env["REQUEST_METHOD"]
-
         request_parameters = {}
         request_parameters.merge!(env["rack.request.form_hash"]) if env["rack.request.form_hash"].present?
         request_parameters.merge!(env["action_controller.instance"].params.try(:to_hash)) if env["action_controller.instance"].params.present?
-
         @controller_instance = env["action_controller.instance"]
         controller_class_name = @controller_instance.try(:class).try(:name)
         action = @controller_instance.action_name
-
+        session = env["action_dispatch.request.unsigned_session_cookie"]
         setup_instance_varaibles
 
         booster = {request_method: request_method,
@@ -41,27 +43,39 @@ module SelfSysteem
              instance_variable_objects: @instance_variable_objects
         }
 
-        path = Rails.root.to_s + "/test/system/support/"
-        file_name = ENV["SYSTEEM"] + ".yml"
-
-        unless File.exist?(path + file_name)
-          full_path = (path + file_name).match(/^(.*\/)?(?:$|(.+?)(?:(\.[^.]*$)|$))/)[1]
-          FileUtils.mkdir_p full_path
-          File.open(path + file_name, "w") { |file| file.write({ affirmations: [] }.to_yaml) }
+        # assign paths for dir and file names for session and affirmation files
+        path = Rails.root.to_s + "/test/system/support/affirmations/"
+        affirmation_filename = ENV["SYSTEEM"] + ".yml"
+        session_filename = ENV["SYSTEEM"] + "_session" + ".yml"
+        if File.exist?(path + affirmation_filename)
+          requirements = YAML.load_file(path + affirmation_filename)[:requirements]
         end
 
-        boosters = YAML.load_file(path + file_name)
+        # writes data to files as yaml
+        unless File.exist?(path + affirmation_filename) && YAML.load_file(path + affirmation_filename)[:affirmations].present?
+          full_path_dir = (path + affirmation_filename).match(/^(.*\/)?(?:$|(.+?)(?:(\.[^.]*$)|$))/)[1]
+          FileUtils.mkdir_p full_path_dir
+          File.open(path + affirmation_filename, "w") { |file| file.write({ requirements: [], affirmations: [] }.to_yaml) }
+        end
+
+        boosters = YAML.load_file(path + affirmation_filename)
+        boosters[:requirements] = requirements if requirements.present?
         boosters[:affirmations] << booster
 
-        File.open(path + file_name, 'w') do |file|
+        File.open(path + affirmation_filename, 'w') do |file|
           file.write(boosters.to_yaml)
         end
 
-        YamlDbSynch.dump(file_name)
+        # Overwrites #{filename}_session.yml.  File ends up with the last session of the run.
+        File.open(path + session_filename, "w") { |file| file.write(session.to_yaml) }
+
+        # Dump the Database.  Overwrites to get the state of the database after the last run.
+        YamlDbSynch.dump(ENV["SYSTEEM"])
 
         teardown_subscriptions
       end
 
+      # response expected for middleware
       [status, headers, [response.try(:body)].flatten]
     end
 
@@ -72,6 +86,9 @@ module SelfSysteem
     end
 
     def setup_subscriptions
+      # setup the equivalend of event listeners to build instance variables.
+      # exactly what ActonController::TestCase does
+
       @_partials = Hash.new(0)
       @_templates = Hash.new(0)
       @_layouts = Hash.new(0)
@@ -112,6 +129,7 @@ module SelfSysteem
     end
 
     def teardown_subscriptions
+      # Removes event listeners
       ActiveSupport::Notifications.unsubscribe("render_template.action_view")
       ActiveSupport::Notifications.unsubscribe("!render_template.action_view")
     end

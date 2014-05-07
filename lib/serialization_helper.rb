@@ -31,7 +31,7 @@ module SerializationHelper
       end
     end
 
-    def load(dir, filename, truncate = true)
+    def load(filename, truncate = false)
       disable_logger
       ActiveRecord::Base.connection.disable_referential_integrity do
         @loader.load(File.new(filename, "r"), truncate)
