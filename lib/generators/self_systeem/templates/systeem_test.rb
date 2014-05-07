@@ -19,6 +19,7 @@ SysteemConfig::Features.each do |f|
 
   file_hash[:affirmations].each_with_index do |a, i|
     describe a[:controller_class_name].constantize do
+      self.use_transactional_fixtures = false
       before do
         # If it is ths first run, set the session and the database
         if file_hash[:requirements].present? && i == 0 && File.exist?(db_filename) && File.exist?(session_filename)
@@ -52,6 +53,7 @@ SysteemConfig::Features.each do |f|
 
   describe "db_cleaner_clean" do
     it {
+      DatabaseCleaner.start
       DatabaseCleaner.clean
     }
   end
