@@ -17,3 +17,10 @@ module SysteemConfig
   Features = Dir["./test/system/support/affirmations/**/*.yml"].reject {|f| f[/_db|_session/]}
   Session = ActionController::TestSession.new
 end
+
+if defined? Devise::TestHelpers
+  class ActionController::TestCase
+    include Devise::TestHelpers
+  end
+end
+
