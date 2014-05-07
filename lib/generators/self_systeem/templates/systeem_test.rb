@@ -27,6 +27,8 @@ SysteemConfig::Features.each do |f|
           YamlDbSynch.load(db_filename)
         end
 
+        Rails.application.load_seed
+
         # Only needed if devise
         @request.env["devise.mapping"] = Devise.mappings[:user]
 
@@ -35,7 +37,7 @@ SysteemConfig::Features.each do |f|
       end
 
       it {
-        controller_instance = response.request.env["action_controller.instance"]
+        controller_instance = response.request.env["action_controller.instance"] || self.instance_variable_get(:@controller)
         builder = SelfSysteem::InstanceVariablesBuilder.call(controller_instance)
         relevant_instance_varaibles = builder.relevant_instance_varaibles
         instance_variable_objects = builder.instance_variable_objects

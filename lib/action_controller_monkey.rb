@@ -34,7 +34,8 @@ if ENV["SYSTEEM"].present?
             if File.exist?(db_path)
               YamlDbSynch.load(db_path)
             end
-
+          else
+            Rails.application.load_seed
           end
 
         end
