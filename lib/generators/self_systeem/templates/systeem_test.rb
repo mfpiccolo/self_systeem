@@ -30,7 +30,7 @@ SysteemConfig::Features.each do |f|
         Rails.application.load_seed
 
         # Only needed if devise
-        @request.env["devise.mapping"] = Devise.mappings[:user]
+        @request.env["devise.mapping"] = Devise.mappings[:user] if defined? Devise
 
         send(a[:request_method].downcase.to_sym, a[:action], a[:request_parameters], SysteemConfig::Session)
         SysteemConfig::Session.merge! session
