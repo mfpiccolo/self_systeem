@@ -69,30 +69,30 @@ The workflow is as follows:
 
 5.  Run the tests to ensure they pass.
 
-6.  Repeat until all features have been covered.
+6.  Repeat this process features have been covered.  Remeber you can require any affirmation so for example you can now create a affirmation to cover blog post comments that requires create_post.
 
 The great thing about this method of testing is you can have multiple starting points.  i.e. (registration/admin_signup, registration/user_signup)
-```
-                   +--------------+    +---------------+                   
-                   |              |    |               |                   
-                   | admin_signup |    | user_signup   |                   
-                   |              |    |               |                   
-                   |              |    |               |                   
-                   +------+-------+    +------+--------+                   
-                          |                   |                            
-                          |                   |                            
-                          |                   |                            
-          +---------------+                   +--------------+             
-          |               |                   |              |             
-          |               |                   |              |             
-  +-------+-----+ +-------+-----+    +--------+-----+  +-----+--------+    
-  |             | |             |    |              |  |              |    
-  |  admin      | |   admin     |    |   user       |  |  user        |    
-  | feature_1   | |  feature_2  |    |  feature_1   |  | feature_2    |    
-  |             | |             |    |              |  |              |    
-  |             | |             |    |              |  |              |    
-  +-------------+ +-------------+    +--------------+  +--------------+    
-                                                                           
+```                                                                      
+                   +--------------+    +---------------+                  
+                   |              |    |               |                  
+                   | admin_signup |    | user_signup   |                  
+    passes down    |              |    |               |                  
+     db/session    |              |    |               |                  
+              +    +------+-------+    +------+--------+                  
+              |           |                   |                           
+              +-----------+                   |                           
+                          |                   |                           
+          +---------------+                   +--------------+            
+          |               |                   |              |            
+          |               |                   |              |            
+  +-------+-----+ +-------+-----+    +--------+-----+  +-----+--------+   
+  |             | |             |    |              |  |              |   
+  |  admin      | |   admin     |    |   user       |  |  user        |   
+  | feature_1   | |  feature_2  |    |  feature_1   |  | feature_2    |   
+  |             | |             |    |              |  |              |   
+  |             | |             |    |              |  |              |   
+  +-------------+ +-------------+    +--------------+  +--------------+   
+                                                                                                                                               
 ```
 
 The database and session passing happens both when you create an affirmation and when you run the tests.  Using this structure you can build a tree of feature tests that cover your entire app and follow a realistic flow that users would actually experience.
