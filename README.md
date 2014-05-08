@@ -101,19 +101,16 @@ The database and session passing happens both when you create an affirmation and
 
 What do these tests really get you?
 
-Well for one the session and database is persisted while runnin all these tests.
-That means that when you are running your tests it is essentially a recreation of
-all of those users actions in sequence.
-
-As far as the implementation goes, it is simply a sequence of controller tests that
-are strung together and share session data and database data.
-
-There are four assertations that are being called.
+There are four assertations that are being called for each test.
 
 1.  Statuses match.
 2.  The proper isntance varables are being set.
 3.  The instance variable objects match.  (only checks id and _id relationship data for active record objects)
 4.  The proper templates are being loaded.
+
+The individual test don't mean much more that controller unit tests, but the session and database is persisted while runnin all these tests.
+That means that when you are running your tests it is essentially a recreation of all of those users actions in sequence.  These test have the potential of catching a system bug that unit testing might miss.
+
 
 Possitive affirmations:
 *  "Today, my system choose to see love instead of fear"
@@ -140,6 +137,8 @@ Or install it yourself as:
     $ gem install self_systeem
 
 ## Configuration
+
+Works with rspec and minitest
 
 1.  Add gem to gemfile and bundle
 
