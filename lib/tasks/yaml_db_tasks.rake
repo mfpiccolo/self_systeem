@@ -11,7 +11,7 @@ namespace :db do
     end
 
     def dump_dir(dir = "")
-      "#{Rails.root}/test/system/support/db#{dir}"
+      "#{Rails.root}/" + SelfSysteem.test_dir + "/system/support/db#{dir}"
     end
 
     desc "Dump contents of database to db/data.extension (defaults to yaml)"

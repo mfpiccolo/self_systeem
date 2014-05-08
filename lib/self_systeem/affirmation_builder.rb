@@ -44,7 +44,7 @@ module SelfSysteem
         }
 
         # assign paths for dir and file names for session and affirmation files
-        path = Rails.root.to_s + "/test/system/support/affirmations/"
+        path = Rails.root.to_s + "/" + SelfSysteem.test_dir + "/system/support/affirmations/"
         affirmation_filename = ENV["SYSTEEM"] + ".yml"
         session_filename = ENV["SYSTEEM"] + "_session" + ".yml"
         if File.exist?(path + affirmation_filename)

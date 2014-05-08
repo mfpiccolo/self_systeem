@@ -7,8 +7,8 @@ module SelfSysteem
       source_root File.expand_path("../templates", __FILE__)
 
       def add_test_and_support
-        copy_file "systeem_config.rb", "test/system/support/systeem_config.rb"
-        copy_file "systeem_test.rb", "test/system/systeem_test.rb"
+        copy_file "systeem_config.rb", SelfSysteem.test_dir + "/system/support/systeem_config.rb"
+        copy_file "systeem_test.rb", SelfSysteem.test_dir + "/system/systeem_test.rb"
       end
 
     end
