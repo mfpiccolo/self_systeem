@@ -69,7 +69,7 @@ The workflow is as follows:
 
 5.  Run the tests to ensure they pass.
 
-6.  Repeat this process features have been covered.  Remeber you can require any affirmation so for example you can now create a affirmation to cover blog post comments that requires create_post.
+6.  Repeat this process until all features have been covered.  Remeber you can require any affirmation so for example you can now create a affirmation to cover blog post comments that requires create_post.
 
 The great thing about this method of testing is you can have multiple starting points.  i.e. (registration/admin_signup, registration/user_signup)
 ```                                                                      
@@ -108,7 +108,7 @@ There are four assertations that are being called for each test.
 3.  The instance variable objects match.  (only checks id and _id relationship data for active record objects)
 4.  The proper templates are being loaded.
 
-The individual test don't mean much more that controller unit tests, but the session and database is persisted while runnin all these tests.
+The individual test don't mean much more than controller unit tests, but the session and database is persisted while runnin all these tests.
 That means that when you are running your tests it is essentially a recreation of all of those users actions in sequence.  These test have the potential of catching a system bug that unit testing might miss.
 
 
@@ -118,7 +118,7 @@ Possitive affirmations:
 
 Feeling better?
 
-Well if those didn't work you can always check out the affirmations that you have built in systeem_booster.yml.  That should do the trick.
+Well if those didn't work you can always check out the affirmations that you have built in the affrimations directory.  That should do the trick.
 
 ## Installation
 
@@ -183,8 +183,9 @@ i.e.
 3.  Ensure that this works with most setups.
 4.  Make the test database switch automatic when running rails with "SYSTEEM" env.
 5.  Allow more configurable options possibly to allow devs to do more targeted testing post yml build.
-6.  Option to do response body matching of some sort.
-7.  Open to suggestions.  Lets start boosting that self-systeem!
+6.  Allow config to decide what level of testing is desired. i.e. (assert all attributes on all objects or just ids)
+7.  Option to do response body matching of some sort.
+8.  Open to suggestions.  Lets start boosting that self-systeem!
 
 ## Donating
 Support this project and [others by mfpiccolo][gittip-mfpiccolo] via [gittip][gittip-mfpiccolo].
