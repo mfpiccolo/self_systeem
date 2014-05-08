@@ -1,11 +1,10 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../../../config/environment", __FILE__)
-require "minitest/spec"
+if Systeem.test_framework == "minitest"
+  require "minitest/spec"
+  require "minitest/spec"
+end
 require "rails/test_help"
-require "minitest/spec"
-
-# TODO application specific.  Need to remove
-Dir[File.join("./" + SelfSysteem.test_dir + "/support/**/authentication.rb")].sort.each { |f| require f }
 
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean_with :truncation

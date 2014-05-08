@@ -1,4 +1,4 @@
-require "./" + SelfSysteem." + SelfSysteem.test_dir + "_dir + "/system/support/systeem_config.rb"
+require "./" + SelfSysteem.test_dir + "/system/support/systeem_config.rb"
 
 SysteemConfig::Features.each do |f|
 
