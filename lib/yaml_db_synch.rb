@@ -6,7 +6,7 @@ class YamlDbSynch
   end
 
   def self.dump_dir
-    "#{Rails.root}/test/system/support/affirmations"
+    "#{Rails.root}/" + SelfSysteem.test_dir + "/system/support/affirmations"
   end
 
   def self.dump(file)

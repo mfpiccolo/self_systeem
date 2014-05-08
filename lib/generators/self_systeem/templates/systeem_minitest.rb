@@ -1,4 +1,4 @@
-require "./test/system/support/systeem_config.rb"
+require "./" + SelfSysteem.test_dir + "/system/support/systeem_config.rb"
 
 SysteemConfig::Features.each do |f|
 
@@ -13,8 +13,8 @@ SysteemConfig::Features.each do |f|
   file_hash = YAML.load_file f
 
   if file_hash[:requirements].last.present?
-    db_filename = "./test/system/support/affirmations/" + file_hash[:requirements].last + "_db.yml"
-    session_filename = "./test/system/support/affirmations/" + file_hash[:requirements].last + "_session.yml"
+    db_filename = "./" + SelfSysteem.test_dir + "/system/support/affirmations/" + file_hash[:requirements].last + "_db.yml"
+    session_filename = "./" + SelfSysteem.test_dir + "/system/support/affirmations/" + file_hash[:requirements].last + "_session.yml"
   end
 
   file_hash[:affirmations].each_with_index do |a, i|

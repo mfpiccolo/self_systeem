@@ -31,39 +31,86 @@ recordings.
 It is simple.  Walk through the app from sart to finish.  Cover as much as you
 feel comfortable.  That's it.  You just built a system test.  Congrats!
 
-## Features
+## Functionality
 
-After setting up self_systeem (see configuration below) use the generator to create
-the system test directory.
+This gem can be used in conjunction with TDD or other testing philosophies.
 
-`rails g self_systeem:test`
+The workflow is as follows:
 
-Then run `SYSTEEM=true rails s`
+1.  Configure self_systeem.  (See Configuration below)
 
-Now open a new browser preferably in incognito mode so you have fresh session.
-Walk through your app like a normal user would.  While you are doing this positive
-affirmations are being built in "test/system/support/systeem_booster.yml"
+2.  Run the rails server with a SYSTEEM env variable.  The value of this variable will be the filename of the affirmation recording.  i.e. `SYSTEEM=some_feature rails s`.  If you would like to add directories just add `/` i.e. `SYSTEEM=registration/signup rails s`
 
-Now just run the test file with `ruby -Itest test/system/systeem_test.rb` and watch
-you tests turn green.
+3.  Open a browser in incogneto mode to get a fresh session.
+
+4.  Navigate through the app until the feature you are describing is covered.
+
+5.  Run the tests and watch them turn green.
+
+## Modularity
+
+  self_systeem is set up to allow features to be tested in a modular form.  Each test can require a previous test.  This allows you to only test one particular feature at a time and require the database and session to be at a specific state.
+
+  Here is a modular workflow:
+
+1.  Build a initial affirmation. i.e `SYSTEEM=registration/signup rails s` and sign a user up.  Run the tests to make sure they pass.
+
+2.  Create a yaml file under `test/system/support/affirmations`.  If your applicatiion was a blog you would do some thing like `create_post.yml`
+
+3.  Open your new feature file and paste in:
+
+    ```
+    ---
+    :requirements:
+    - registration/signup
+    :affirmations: []
+    ```
+4.  Run `SYSTEEM=create_post rails s`.  Open an incogneto browser and this will preload your session and database.  That means you can navigate straight to the route you need to without signing in.  It is already taken care of by the requirements.  Complete the feature.
+
+5.  Run the tests to ensure they pass.
+
+6.  Repeat this process features have been covered.  Remeber you can require any affirmation so for example you can now create a affirmation to cover blog post comments that requires create_post.
+
+The great thing about this method of testing is you can have multiple starting points.  i.e. (registration/admin_signup, registration/user_signup)
+```                                                                      
+                   +--------------+    +---------------+                  
+                   |              |    |               |                  
+                   | admin_signup |    | user_signup   |                  
+    passes down    |              |    |               |                  
+     db/session    |              |    |               |                  
+              +    +------+-------+    +------+--------+                  
+              |           |                   |                           
+              +-----------+                   |                           
+                          |                   |                           
+          +---------------+                   +--------------+            
+          |               |                   |              |            
+          |               |                   |              |            
+  +-------+-----+ +-------+-----+    +--------+-----+  +-----+--------+   
+  |             | |             |    |              |  |              |   
+  |  admin      | |   admin     |    |   user       |  |  user        |   
+  | feature_1   | |  feature_2  |    |  feature_1   |  | feature_2    |   
+  |             | |             |    |              |  |              |   
+  |             | |             |    |              |  |              |   
+  +-------------+ +-------------+    +--------------+  +--------------+   
+                                                                                                                                               
+```
+
+The database and session passing happens both when you create an affirmation and when you run the tests.  Using this structure you can build a tree of feature tests that cover your entire app and follow a realistic flow that users would actually experience.
 
 ## Test Coverage
 
 What do these tests really get you?
 
-Well for one the session and database is persisted while runnin all these tests.
-That means that when you are running your tests it is essentially a recreation of
-all of those users actions in sequence.
-
-As far as the implementation goes, it is simply a sequence of controller tests that
-are strung together and share session data and database data.
-
-There are four assertations that are being called.
+There are four assertations that are being called for each test.
 
 1.  Statuses match.
 2.  The proper isntance varables are being set.
 3.  The instance variable objects match.  (only checks id and _id relationship data for active record objects)
 4.  The proper templates are being loaded.
+
+The individual test don't mean much more that controller unit tests, but the session and database is persisted while runnin all these tests.
+That means that when you are running your tests it is essentially a recreation of all of those users actions in sequence.  These test have the potential of catching a system bug that unit testing might miss.
+
 
 Possitive affirmations:
 *  "Today, my system choose to see love instead of fear"
@@ -91,18 +138,30 @@ Or install it yourself as:
 
 ## Configuration
 
-To use the generator run:
+Works with rspec and minitest
 
-    $ rails g self_systeem:test
+1.  Add gem to gemfile and bundle
 
-This will set up a system folder under test with a test file and some support files.
+2.  Add this to config/initializers/systeem.rb
+```ruby
+    SelfSysteem.configure do |config|
+      # uncomment line below if using rspec
+      # config.test_framework = "rspec"
 
-Add this line to development.rb
+      config.test_dir = "spec" # specify directory which you hold your tests
+    end
+```
+3.  Run the generator
+
+    `$ rails g self_systeem:test`
+
+  This will set up a system folder under test or spec with a test file and some support files.
+
+4.  Add this line to development.rb
 
 `config.middleware.use "SelfSysteem::AffirmationBuilder" if ENV["SYSTEEM"].present?`
 
-Temporarily change you database.yml so the development database uses the test database.
-This step is only while you build systeem_booster.yml file.  Chage it back when you are done.
+  Temporarily change you database.yml so the development database uses the test   database.This step is only while you build systeem_booster.yml file.  Chage it back when you are done.
 
 i.e.
 ```ruby
@@ -119,15 +178,13 @@ i.e.
 
 ## The Future
 
-1.  Refactoring would be nice.  2.1 from codeclimate is no good.
+1.  Refactoring would be nice.
 2.  Boost test coverage.
-3.  Ensure that this works with most setups. Only works with minitest, would be nice to have rspec and several rails versions working.
+3.  Ensure that this works with most setups.
 4.  Make the test database switch automatic when running rails with "SYSTEEM" env.
-5.  Allow more configurable options possibly to allow devs to do more targeted testing post systeem_booster.yml build.
+5.  Allow more configurable options possibly to allow devs to do more targeted testing post yml build.
 6.  Option to do response body matching of some sort.
-7.  Allow for multiple yaml files to be built.
-8.  Allow devs to save session and database state to begin a test run. i.e. (For a new file called "create_posts.yml" start with database and session after ["sign_up.yml", "create_profile.yml", "create_blog.yml"])
-9.  Open to suggestions.  Lets start boosting that self-systeem!
+7.  Open to suggestions.  Lets start boosting that self-systeem!
 
 ## Donating
 Support this project and [others by mfpiccolo][gittip-mfpiccolo] via [gittip][gittip-mfpiccolo].

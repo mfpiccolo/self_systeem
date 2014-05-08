@@ -8,16 +8,16 @@ if ENV["SYSTEEM"].present?
         session["run_count"] += 1
 
         if session["run_count"] <= 1
-          affirmation_path = "./test/system/support/affirmations/" + ENV["SYSTEEM"] + ".yml"
+          affirmation_path = "./" + SelfSysteem.test_dir + "/system/support/affirmations/" + ENV["SYSTEEM"] + ".yml"
 
           if File.exist?(affirmation_path)
             affirmation_requirements = YAML.load_file(affirmation_path)[:requirements].last
 
-            session_path = ("./test/system/support/affirmations/" +
+            session_path = ("./" + SelfSysteem.test_dir + "/system/support/affirmations/" +
                                              affirmation_requirements.to_s +
                                              "_session.yml")
 
-            db_path = ("./test/system/support/affirmations/" +
+            db_path = ("./" + SelfSysteem.test_dir + "/system/support/affirmations/" +
                                              affirmation_requirements.to_s +
                                              "_db.yml")
 
