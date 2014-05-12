@@ -8,7 +8,7 @@ module SelfSysteem
 
       def add_test_and_support
         copy_file "systeem_config.rb", SelfSysteem.test_dir + "/system/support/systeem_config.rb"
-        copy_file "systeem_" + Systeem.test_framework +".rb", SelfSysteem.test_dir + "/system/systeem_" + Systeem.test_dir +".rb"
+        copy_file "systeem_" + SelfSysteem.test_framework + ".rb", SelfSysteem.test_dir + "/system/systeem_" + SelfSysteem.test_dir + ".rb"
       end
 
     end
