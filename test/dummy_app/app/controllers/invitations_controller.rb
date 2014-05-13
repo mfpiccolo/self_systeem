@@ -10,7 +10,7 @@ class InvitationsController < ApplicationController
     if @user.update_attributes(user_params)
       @user.clear_invitation_token!
       sign_in(:user, @user)
-      redirect_to after_sign_in_path_for(@user), notice: "Welcome to Finishes!"
+      redirect_to after_sign_in_path_for(@user), notice: "Welcome to DummyApp!"
     else
       render :edit
     end

@@ -3,7 +3,7 @@ class InvitationMailer < ActionMailer::Base
 
   def invite(user_id)
     @user = User.find(user_id)
-    mail to: @user.email, subject: "You have been invited to FinishesApp.com"
+    mail to: @user.email, subject: "You have been invited to DummyAppApp.com"
   end
 
 end

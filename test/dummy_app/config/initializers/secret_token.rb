@@ -9,5 +9,5 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Finishes::Application.config.secret_key_base = 'e997edf9d7eba5cf89a76a046fa53f5d66261d22cfcf29e3f538c75ad2d175b106bd5d099f44f6ce34ad3b3162d71cfaa37d2d4f4b38645288331427b4c2a607'
+DummyApp::Application.config.secret_key_base = 'e997edf9d7eba5cf89a76a046fa53f5d66261d22cfcf29e3f538c75ad2d175b106bd5d099f44f6ce34ad3b3162d71cfaa37d2d4f4b38645288331427b4c2a607'
 # Be sure to restart your server when you modify this file.

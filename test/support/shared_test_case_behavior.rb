@@ -5,7 +5,7 @@ module MiniTestSpecRails
 
     included do
       # before           { setup_dummy_schema }
-      let(:app)        { Finishes::Application }
+      let(:app)        { DummyApp::Application }
     end
 
     private

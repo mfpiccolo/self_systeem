@@ -22,7 +22,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -228,7 +228,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -268,7 +268,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -474,7 +474,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -514,7 +514,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -720,7 +720,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -760,7 +760,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -966,7 +966,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -1006,7 +1006,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -1212,7 +1212,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -1252,7 +1252,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -1458,7 +1458,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -1498,7 +1498,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -1704,7 +1704,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -1744,7 +1744,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -1950,7 +1950,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -1990,7 +1990,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -2196,7 +2196,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -2236,7 +2236,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -2442,7 +2442,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -2482,7 +2482,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -2688,7 +2688,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -2728,7 +2728,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -2934,7 +2934,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -2974,7 +2974,7 @@ Searching 523 files for "fa_icon"
 /Users/mpiccolo/code/mfpiccolo/self_systeem/test/dummy_app/app/views/organization/_tabbar_links.html.erb:
     1  <% if @project.present? && @project.persisted? %>
     2:   <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
-    3:   <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+    3:   <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
     4:   <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
     5:   <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
     6  <% else %>
@@ -3180,7 +3180,7 @@ Searching 523 files for "fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -3314,7 +3314,7 @@ Searching 523 files for "%#= link_to fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
@@ -3448,7 +3448,7 @@ Searching 523 files for "%#= link_to fa_icon"
     3:     <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), edit_project_path(@project) %></dd>
     4    <% end %>
     5    <% if project_collaborator_access? %>
-    6:     <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), new_project_finish_path(@project) %></dd>
+    6:     <dd><%#= link_to fa_icon("list", text: "Add DummyApp", class: "fa-fw"), new_project_finish_path(@project) %></dd>
     7    <% end %>
     8    <% if project_admin_access? %>
     9:     <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), new_project_budget_item_path(@project) %></dd>
