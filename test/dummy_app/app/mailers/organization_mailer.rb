@@ -1,5 +1,5 @@
 class OrganizationMailer < ActionMailer::Base
-  default from: "support@finishesapp.com"
+  default from: "support@dummyapp.com"
 
 
   def share(user_id, organization_id)

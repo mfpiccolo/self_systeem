@@ -1,5 +1,5 @@
 class ProjectMailer < ActionMailer::Base
-  default from: "support@finishesapp.com"
+  default from: "support@dummyapp.com"
 
 
   def share(user_id, project_id)

@@ -36,4 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "cells", "~> 3.10.0"
   spec.add_development_dependency "sass"
   spec.add_development_dependency "compass"
+  spec.add_development_dependency "foreigner"
 end

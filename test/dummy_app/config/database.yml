@@ -2,7 +2,7 @@ development: &dev
   adapter: postgresql
   encoding: unicode
   # database: finishes_development
-  database: finishes_test
+  database: dummy_test
   pool: 5
   username: <%= ENV["USER"] %>
   password:
@@ -12,7 +12,7 @@ development: &dev
 test:
   adapter: postgresql
   encoding: unicode
-  database: finishes_test
+  database: dummy_test
   pool: 5
   username: <%= ENV["USER"] %>
   password:
@@ -21,8 +21,8 @@ test:
 
 staging:
   <<: *dev
-  database: finishes_development
+  database: dummy_development
 
 production:
   <<: *dev
-  database: finishes_development
+  database: dummy_development

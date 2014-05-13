@@ -1,4 +1,4 @@
-class CreateDummyApp < ActiveRecord::Migration
+class CreateFinishes < ActiveRecord::Migration
   def change
     create_table :finishes do |t|
       t.references  :project, null: false

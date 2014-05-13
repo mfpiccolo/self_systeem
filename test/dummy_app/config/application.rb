@@ -15,7 +15,8 @@ require 'bundler/setup'
 require 'rails/all'
 require "minitest-spec-rails"
 require "devise_invitable"
-
+require "foreigner"
+require "money-rails"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems

@@ -1,4 +1,4 @@
-class AddSelectorFieldsToDummyApp < ActiveRecord::Migration
+class AddSelectorFieldsToFinishes < ActiveRecord::Migration
   def up
     Finish.all.each do |finish|
       finish.selected = false

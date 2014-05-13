@@ -1,5 +1,5 @@
 class InvitationMailer < ActionMailer::Base
-  default from: "support@finishesapp.com"
+  default from: "support@dummyapp.com"
 
   def invite(user_id)
     @user = User.find(user_id)

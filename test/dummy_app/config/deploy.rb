@@ -13,11 +13,11 @@ set :rails_env, stage
 
 set :shared_paths, %w[config/database.yml log pids public/assets sockets .env .foreman Procfile]
 
-set :application, "finishes"
+set :application, "dummyapp"
 set :foreman_app, -> { "#{application}-#{stage}" }
-set :domain, -> { "finishes-#{stage}.finishesapp.com" }
+set :domain, -> { "dummyapp-#{stage}.dummyapp.com" }
 set :deploy_to, -> { "/applications/#{application}/#{stage}" }
-set :repository, "git@github.com:newleaders/finishes.git"
+set :repository, "git@github.com:newleaders/dummyapp.git"
 
 set :user, "deploy"
 set :forward_agent, true

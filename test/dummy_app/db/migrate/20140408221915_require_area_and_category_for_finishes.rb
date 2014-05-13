@@ -1,4 +1,4 @@
-class RequireAreaAndCategoryForDummyApp < ActiveRecord::Migration
+class RequireAreaAndCategoryForFinishes < ActiveRecord::Migration
   def up
     Finish.all.each do |finish|
       next if finish.area_id.present? && finish.category_id.present?

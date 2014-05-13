@@ -1,5 +1,5 @@
 class DeadlineMailer < ActionMailer::Base
-  default from: "support@finishesapp.com"
+  default from: "support@dummyapp.com"
 
 
   def notify(project_id)

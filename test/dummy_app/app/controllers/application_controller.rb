@@ -63,8 +63,8 @@ class ApplicationController < ActionController::Base
   def http_auth
     magicword = "654e00c89410ca8386aabd45"
     if Rails.env.staging? && params[:elb] != magicword
-      authenticate_or_request_with_http_basic("finishes-#{Rails.env}") do |u, p|
-        u == "finishes" && p == "finishes-#{Rails.env}"
+      authenticate_or_request_with_http_basic("dummy_app-#{Rails.env}") do |u, p|
+        u == "dummy_app" && p == "dummy_app-#{Rails.env}"
       end
     end
   end
