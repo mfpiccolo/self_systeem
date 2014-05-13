@@ -2,7 +2,7 @@ class ProjectCreator
   attr_reader :user
   attr_reader :project
 
-  def initialize(user:, name:, location: nil, description: nil)
+  def initialize(user, name, location = nil, description = nil)
     @user = user
     @project = Project.new(
       name: name,
@@ -23,7 +23,7 @@ class ProjectCreator
     project
   end
 
-  def self.create(user:, name:, location: nil, description: nil)
+  def self.create(user, name, location = nil, description = nil)
     new(user: user,
       name: name,
       location: location,
