@@ -1,5 +1,5 @@
 # This migration comes from thincloud_authentication (originally 20130505230811)
-class AddPasswordResetTokenAndPasswordResetSentAtToIdentities < ActiveRecord::Migration
+class AddPasswordResetTokenToIdentities < ActiveRecord::Migration
   def change
     add_column :thincloud_authentication_identities, :password_reset_token,
       :string, default: nil
