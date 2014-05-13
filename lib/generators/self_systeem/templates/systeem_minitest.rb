@@ -1,3 +1,4 @@
+# require "test_helper"
 require "./" + SelfSysteem.test_dir + "/system/support/systeem_config.rb"
 
 SysteemConfig::Features.each do |f|

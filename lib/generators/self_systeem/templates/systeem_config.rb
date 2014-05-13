@@ -1,10 +1,11 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../../../config/environment", __FILE__)
-if Systeem.test_framework == "minitest"
+if SelfSysteem.test_framework == "minitest"
   require "minitest/spec"
   require "minitest/spec"
 end
 require "rails/test_help"
+# require "test_helper"
 
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean_with :truncation
@@ -19,3 +20,4 @@ if defined? Devise::TestHelpers
     include Devise::TestHelpers
   end
 end
+
