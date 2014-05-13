@@ -14,9 +14,9 @@ class User::ProjectsController < User::BaseController
 
   def create
     @project = ProjectCreator.create(
-      user: current_user, name: project_params[:name],
-      location: project_params[:location],
-      description: project_params[:description]
+      current_user, project_params[:name],
+      project_params[:location],
+      project_params[:description]
     )
 
     if @project.persisted?
