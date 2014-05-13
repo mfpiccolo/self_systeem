@@ -1,0 +1,82 @@
+.user-panel,
+.tabs-panel,
+.form-panel,
+.tabs-content > .content {
+  background: #fff;
+  border: 1px solid $tabs-border-color;
+  padding: rem-calc(17);
+
+  strong,
+  label {
+    line-height: rem-calc(44);
+  }
+
+  .filter {
+    select {
+      background: $tabs-content-link-color image-url('dropdown-arrow.png') no-repeat 97% center;
+      color: #fff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      padding-left: rem-calc(10);
+      text-align: left;
+    }
+
+    .button {
+      padding-bottom: rem-calc(10);
+      padding-top: rem-calc(12);
+    }
+  }
+
+  #attachment-form {
+    margin-top: rem-calc(10);
+  }
+
+  table {
+    margin-top: rem-calc(15);
+
+    th:last-of-type {
+      width: rem-calc(223);
+    }
+
+    th.select {
+      width: rem-calc(200);
+    }
+
+    td:last-of-type {
+      text-align: right;
+    }
+
+    .button {
+      background: #ababab;
+      padding: rem-calc(7) rem-calc(10) rem-calc(8);
+      top: rem-calc(10);
+    }
+
+    .select-desc {
+      font-size: rem-calc(12);
+      float: right;
+      width: 50%;
+    }
+  }
+
+  a:not(.button) {
+    color: $tabs-content-link-color;
+  }
+
+  .breadcrumbs > .current > a {
+    color: $h1-color;
+  }
+
+  .button {
+    background: $tabs-content-link-color;
+  }
+}
+
+.user-panel {
+  table {
+    td {
+      &:last-of-type {
+        text-align: left;
+      }
+    }
+  }
+}

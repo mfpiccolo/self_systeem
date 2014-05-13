@@ -1,0 +1,47 @@
+<% content_for :tabbar_title do %>
+  <%= @finish.new_record? ? "New" : "Edit" %> Finish
+<% end %>
+
+<div class="form-panel clearfix">
+  <ul class="breadcrumbs">
+    <li><%= link_to @project.name, [@organization, @project] %></li>
+    <li><%= link_to "Finishes", [@organization, @project, :finishes] %></li>
+    <% if @finish.new_record? -%>
+      <li class="current"><a href="#">New</a></li>
+    <% else -%>
+      <li><%= link_to @finish.name, [@organization, @project, @finish] %></li>
+      <li class="current"><a href="#">Edit</a></li>
+    <% end -%>
+  </ul>
+
+  <%= simple_form_for [@organization, @project, @finish] do |f| %>
+    <%= f.input :name, required: false %>
+    <div class="row">
+      <div class="small-12 large-6 columns">
+        <%= f.input :area_id, collection: @areas.map { |a| [a.name, a.id] } %>
+      </div>
+      <div class="small-12 large-6 columns">
+        <%= f.input :category_id, collection: @categories.map { |c| [c.name, c.id] } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 large-6 columns">
+        <%= f.input :location %>
+      </div>
+      <div class="small-12 large-6 columns">
+        <%= f.input :model %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 large-6 columns">
+        <%= f.input :quantity %>
+      </div>
+      <div class="small-12 large-6 columns">
+        <%= f.input :price %>
+      </div>
+    </div>
+    <%= f.input :description %>
+
+    <%= f.button :submit, class: "small button radius right" %>
+  <% end %>
+</div>

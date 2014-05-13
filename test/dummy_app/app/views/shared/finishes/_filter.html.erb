@@ -1,0 +1,13 @@
+<div class="filter">
+  <%= form_tag [@organization, @project, :finishes], method: :get do %>
+    <div class="small-12 large-5 columns">
+      <%= select_tag :area_id, filter_options_for_select(Area, @areas, params[:area_id]) %>
+    </div>
+    <div class="small-12 large-5 columns">
+      <%= select_tag :category_id, filter_options_for_select(Category, @categories, params[:category_id]) %>
+    </div>
+    <div class="small-12 large-2 columns">
+      <%= submit_tag "Filter", class: "button small radius"%>
+    </div>
+  <% end %>
+</div>

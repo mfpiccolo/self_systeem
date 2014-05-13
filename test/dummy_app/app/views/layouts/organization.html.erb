@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Finishes" %></title>
+
+    <%= stylesheet_link_tag    "user" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header>
+      <%= render "organization/header" %>
+    </header>
+    <main>
+      <div class="off-canvas-wrap">
+        <div class="inner-wrap">
+          <nav class="tab-bar">
+            <section class="left-small">
+              <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+            </section>
+            <section class="right-small">
+              <a class="right-off-canvas-toggle menu-icon"><span></span></a>
+            </section>
+            <section class="middle tab-bar-section">
+              <div class="full-width row">
+                <div class="small-12 large-5 columns">
+                  <h1><%= yield :tabbar_title %></h1>
+                </div>
+                <div class="small-12 large-7 columns">
+                  <dl class="sub-nav right hide-for-medium-down">
+                    <%= render "organization/tabbar_links" %>
+                  </dl>
+                </div>
+              </div>
+            </section>
+            <% unless @project.blank? %>
+              <section class="right-small hide-for-large-up">
+                <a class="right-off-canvas-toggle menu-icon"><span></span></a>
+              </section>
+            <% end %>
+          </nav>
+          <aside class="left-off-canvas-menu">
+            <%= render "organization/sidebar" %>
+          </aside>
+          <aside class="right-off-canvas-menu">
+            <section class="user-sidebar">
+              <dl class="side-nav">
+                <%= render "organization/tabbar_links" %>
+              </dl>
+            </section>
+          </aside>
+          <section class="main-section">
+            <div class="full-width row">
+              <div class="small-12 columns">
+                <%= render "layouts/messages" %>
+                <%= yield %>
+              </div>
+            </div>
+          </section>
+          <a class="exit-off-canvas"></a>
+        </div>
+      </div>
+    </main>
+    <%= javascript_include_tag "user" %>
+  </body>
+</html>

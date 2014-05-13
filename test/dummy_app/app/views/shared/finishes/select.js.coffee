@@ -1,0 +1,3 @@
+jQuery ->
+
+  location.reload()

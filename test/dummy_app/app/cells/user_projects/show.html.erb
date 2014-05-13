@@ -1,0 +1,14 @@
+<h1>Projects</h1>
+
+<% if @projects.any? -%>
+  <ul class="side-nav">
+    <% @projects.each do |project| -%>
+      <li><%= link_to project.name, project_path(project) %></li>
+    <% end -%>
+    <% if @project_count > @projects.size -%>
+      <li><%= link_to "View All Projects", projects_path %></li>
+    <% end -%>
+  </ul>
+<% end %>
+
+<%#= link_to fa_icon("plus-square", text: "Add a project", class: "fa-fw"), new_project_path, class: "action" %>

@@ -1,0 +1,39 @@
+#project-tabs {
+  background: $tabs-bg-color;
+  border: 1px solid $tabs-border-color;
+  border-bottom: none;
+  margin-top: rem-calc(18);
+
+  dl.sub-nav {
+    margin: 0;
+    padding: 0;
+
+    dd {
+      border-right: 1px solid $tabs-border-color;
+      margin: 0;
+
+      &.active {
+        a {
+          @include border-radius(0);
+          @include box-shadow(inset 0 3px 0 $tabs-active-border-color);
+          background: $tabs-active-bg-color;
+        }
+      }
+
+      a {
+        color: $tabs-link-color;
+        line-height: rem-calc(41);
+        padding: rem-calc(13) rem-calc(16);
+
+        @media #{$small-only} {
+          padding: rem-calc(13) rem-calc(8);
+        }
+
+        i {
+          font-size: rem-calc(18);
+        }
+
+      }
+    }
+  }
+}

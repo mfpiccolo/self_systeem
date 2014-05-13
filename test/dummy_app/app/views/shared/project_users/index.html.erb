@@ -1,0 +1,47 @@
+<% content_for :tabbar_title do %>
+  <%= @project.name %>
+<% end %>
+
+<%#= render_cell :project, :show, project: @project %>
+
+<%= render "shared/project_tabs" %>
+
+<div class="tabs-panel">
+  <% if project_member_access? %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%#= link_to fa_icon("plus-square", text: "Add Member", class: "fa-fw"), [:new, @organization, @project, :member] %>
+      </div>
+    </div>
+  <% end %>
+  <table class="responsive">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <% if project_member_access? %>
+        <th>&nbsp;</th>
+      <% end %>
+    </tr>
+    </thead>
+    <tbody>
+    <% @project_users.each do |project_user| -%>
+      <tr>
+        <td><%= project_user.user.name %></td>
+        <td><%= project_user.user.email %></td>
+        <td><%= project_user.role.titleize %></td>
+        <% if project_member_access? %>
+          <td>
+            <%#= link_to fa_icon("pencil", text: "Edit", class: "fa-fw"), [:edit, @organization, @project, :member, id: project_user], class: "tiny button radius" %>
+            <%#= link_to fa_icon("trash-o", text: "Delete", class: "fa-fw"), [@organization, @project, :member, id: project_user],
+                        method: :delete, data: { confirm: "Are you sure?" }, class: "tiny button radius" %>
+          </td>
+        <% end %>
+      </tr>
+    <% end -%>
+    </tbody>
+  </table>
+
+  <%#= paginate @project_users %>
+</div>

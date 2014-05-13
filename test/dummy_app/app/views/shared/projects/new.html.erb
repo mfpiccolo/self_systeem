@@ -1,0 +1,17 @@
+<% content_for :tabbar_title do %>
+  New Project
+<% end %>
+
+<div class="form-panel clearfix">
+  <ul class="breadcrumbs">
+    <li><%= link_to "Projects", [@organization, :projects] %></li>
+    <li class="current"><a href="#">New</a></li>
+  </ul>
+
+  <%= simple_form_for [@organization, @project] do |f| %>
+    <%= f.input :name, required: false %>
+    <%= f.input :location, required: false %>
+    <%= f.input :description, required: false %>
+    <%= f.button :submit, class: "small button radius right" %>
+  <% end %>
+</div>

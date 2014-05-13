@@ -1,0 +1,37 @@
+<% content_for :tabbar_title do %>
+  Budget Item Details
+<% end %>
+
+<div class="form-panel clearfix">
+  <ul class="breadcrumbs">
+    <li><%= link_to @project.name, [@organization, @project] %></li>
+    <li><%= link_to "Budget", [@organization, @project, :budget_items] %></li>
+    <li class="current"><a href="#">Details</a></li>
+  </ul>
+
+  <div class="row-pad">
+    <%#= link_to fa_icon("pencil", text: "Edit", class: "fa-fw"), [:edit, @organization, @project, @budget_item], class: "right" %>
+    <div class="row">
+      <div class="small-3 columns">
+        <h4>Area</h4>
+        <p>
+          <%= @budget_item.area.name %>
+        </p>
+      </div>
+      <div class="small-3 columns">
+        <h4>Category</h4>
+        <p>
+          <%= @budget_item.category.name %>
+        </p>
+      </div>
+      <div class="small-3 columns">
+        <h4>Amount</h4>
+        <p>
+          <%= number_to_currency @budget_item.amount %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <%= render "shared/finishes/finishes", finishes: @finishes %>
+</div>

@@ -1,0 +1,16 @@
+<% content_for :tabbar_title do %>
+  <%= @project.name %>
+<% end %>
+
+<div class="form-panel clearfix">
+  <ul class="breadcrumbs">
+    <li><%= link_to @project.name, [@organization, @project] %></li>
+    <li><%= link_to "edit", [:edit, @organization, @project, anchor: "categories"] %></li>
+    <li class="current"><a href="#"><%= @category.new_record? ? "New" : "Edit" %> Category</a></li>
+  </ul>
+
+  <%= simple_form_for [@organization, @project, @category] do |f| %>
+    <%= f.input :name, required: false %>
+    <%= f.button :submit, class: "tiny button radius right" %>
+  <% end %>
+</div>

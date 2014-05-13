@@ -1,0 +1,67 @@
+<% content_for :tabbar_title do %>
+  <%= @organization.name %>
+<% end %>
+
+<div class="form-panel clearfix">
+  <ul class="breadcrumbs">
+    <li><%= link_to @organization.name, organization_path(@organization) %></li>
+    <li class="current"><a href="#">Edit</a></li>
+  </ul>
+
+  <%= simple_form_for @organization do |f| %>
+    <%= f.input :name, required: false %>
+    <%= f.input :location, as: :text, required: false %>
+    <%= f.input :description, as: :text, required: false %>
+    <%= f.input :logo, as: :file %>
+    <%= f.button :submit, class: "small button radius right" %>
+  <% end %>
+
+  <div class="clearfix"></div>
+  <div id="project-tabs">
+    <dl class="sub-nav" data-tab data-options="deep_linking:true">
+      <dd class="active"><%#= link_to fa_icon("tags", text: "Default Categories", class: "fa-fw"), "#categories" %></dd>
+      <dd><%#= link_to fa_icon("map-marker", text: "Default Areas", class: "fa-fw"), "#areas" %></dd>
+    </dl>
+  </div>
+  <div class="tabs-content">
+    <div class="content active" id="categories">
+      <%#= link_to fa_icon("plus-square", text: "Add Default Category", class: "fa-fw"), new_organization_default_category_path(@organization) %>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>&nbsp;</th>
+        </tr>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name %></td>
+            <td>
+              <%= link_to "Edit", edit_organization_default_category_path(@organization, category), class: "tiny button radius" %>
+              <%= link_to "Delete", organization_default_category_path(@organization, category),
+                          method: :delete, data: { confirm: "Are you sure?" }, class: "tiny button radius" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="content" id="areas">
+      <%#= link_to fa_icon("plus-square", text: "Add Default Area", class: "fa-fw"), new_organization_default_area_path(@organization) %>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>&nbsp;</th>
+        </tr>
+        <% @areas.each do |area| %>
+          <tr>
+            <td><%= area.name %></td>
+            <td>
+              <%= link_to "Edit", edit_organization_default_area_path(@organization, area), class: "tiny button radius" %>
+              <%= link_to "Delete", organization_default_area_path(@organization, area),
+                          method: :delete, data: { confirm: "Are you sure?" }, class: "tiny button radius" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+

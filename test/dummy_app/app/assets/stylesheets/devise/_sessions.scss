@@ -1,0 +1,42 @@
+.auth {
+  background: transparent;
+  margin: 7rem 0 4rem;
+  padding: rem-calc(25);
+
+  h2 {
+    margin-bottom: rem-calc(26);
+  }
+
+  .alert-box {
+    h2 {
+      color: #fff;
+    }
+  }
+
+  .button {
+    background: #3a82be;
+  }
+
+  ul {
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      &:only-child {
+        line-height: rem-calc(51);
+      }
+
+      a {
+        color: #3a82be;
+        display: inline-block;
+        margin-bottom: rem-calc(4);
+      }
+    }
+  }
+
+  .inline {
+    ul {
+      @extend .inline-list;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.alert-box {
+  &.success {
+    border: 1px solid #b7e5c8;
+    color: #5fa177;
+
+    .close {
+      color: #5fa177;
+    }
+  }
+}

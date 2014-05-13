@@ -1,0 +1,43 @@
+<% content_for :tabbar_title do %>
+  <%= @project.name %>
+<% end %>
+
+<%#= render_cell :project, :show, project: @project %>
+
+<%= render "shared/project_tabs" %>
+
+<div class="tabs-panel">
+  <% if project_admin_access? %>
+    <%#= link_to fa_icon("plus-square", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %>
+  <% end %>
+
+  <table class="responsive">
+    <thead>
+      <tr>
+        <th>Amount</th>
+        <th>Area</th>
+        <th>Category</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @budget_items.each do |budget_item| -%>
+      <tr>
+        <td><%= number_to_currency budget_item.amount %></td>
+        <td><%= budget_item.area.name %></td>
+        <td><%= budget_item.category.name %></td>
+        <td>
+          <%#= link_to fa_icon("list", text: "Details", class: "fa-fw"), [@organization, @project, budget_item], class: "tiny button radius" %>
+          <% if project_admin_access? %>
+            <%#= link_to fa_icon("pencil", text: "Edit", class: "fa-fw"), [:edit, @organization, @project, budget_item], class: "tiny button radius" %>
+            <%#= link_to fa_icon("trash-o", text: "Delete", class: "fa-fw"), [@organization, @project, budget_item],
+              method: :delete, data: { confirm: "Are you sure?" }, class: "tiny button radius" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end -%>
+  </tbody>
+  </table>
+
+  <%#= paginate @budget_items %>
+</div>

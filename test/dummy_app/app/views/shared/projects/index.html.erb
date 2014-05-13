@@ -1,0 +1,31 @@
+<% content_for :tabbar_title do %>
+  <%= @organization.present? ? @organization.name : current_user.email %>
+<% end %>
+
+<div id="project-info">
+  <h2>Projects</h2>
+  <div class="project-info-inner row">
+    <div class="small-12 columns">
+      <table class="responsive">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Description</th>
+          <th>Budget</th>
+        </tr>
+        </thead>
+        <% @projects.each do |project| -%>
+          <tr>
+            <td><%= link_to project.name, [@organization, project] %></td>
+            <td><%= project.location %></td>
+            <td><%= project.description %></td>
+            <td><%= number_to_currency project.total_budget_cents %></td>
+          </tr>
+        <% end -%>
+      </table>
+
+      <%#= paginate @projects %>
+    </div>
+  </div>
+</div>

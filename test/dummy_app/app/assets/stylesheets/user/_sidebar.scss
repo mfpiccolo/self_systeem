@@ -1,0 +1,45 @@
+.user-sidebar {
+  $pad-side: rem-calc(20);
+
+  h1 {
+    color: $sidebar-h1-color;
+    font-size: rem-calc(14);
+    font-weight: bold;
+    margin: 0;
+    padding: rem-calc(18) $pad-side rem-calc(16);
+    text-transform: uppercase;
+  }
+
+  ul.side-nav {
+    border-top: 1px solid $sidebar-action-link-border-color;
+    margin-right: rem-calc(10);
+    padding: 0;
+
+    li {
+      border-bottom: 1px solid $sidebar-action-link-border-color;
+      margin: 0;
+      padding: rem-calc(11) $pad-side rem-calc(11);
+
+      &.active {
+        background: $sidebar-active-bg-color;
+      }
+
+      a,
+      a:hover {
+        color: $sidebar-link-color;
+        font-weight: bold;
+      }
+    }
+  }
+
+  & > a,
+  dl.side-nav a {
+//    &.action {
+      color: $sidebar-action-link-color;
+      display: block;
+      font-size: rem-calc(14);
+      font-weight: bold;
+      padding: rem-calc(15) $pad-side rem-calc(15);
+//    }
+  }
+}

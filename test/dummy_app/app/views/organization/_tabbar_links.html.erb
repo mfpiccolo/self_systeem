@@ -1,0 +1,9 @@
+<% if @project.present? && @project.persisted? %>
+  <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Project", class: "fa-fw"), [:edit, @organization, @project] %></dd>
+  <dd><%#= link_to fa_icon("list", text: "Add Finishes", class: "fa-fw"), [:new, @organization, @project, :finish] %></dd>
+  <dd><%#= link_to fa_icon("bar-chart-o", text: "Add Budget", class: "fa-fw"), [:new, @organization, @project, :budget_item] %></dd>
+  <dd><%#= link_to fa_icon("users", text: "Add Users", class: "fa-fw"), [:new, @organization, @project, :member] %></dd>
+<% else %>
+  <dd><%#= link_to fa_icon("pencil-square-o", text: "Edit Organization", class: "fa-fw"), edit_organization_path(@organization) %></dd>
+  <dd><%#= link_to fa_icon("plus-square", text: "Add a Project", class: "fa-fw"), [:new, @organization, :project] %></dd>
+<% end %>

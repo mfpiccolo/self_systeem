@@ -1,0 +1,50 @@
+<table class="responsive">
+  <thead>
+  <tr>
+    <th style="width: 11em">Image</th>
+    <th>Name</th>
+    <th>Model</th>
+    <th>Price</th>
+    <th class="select">Select</th>
+    <th>&nbsp;</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @finishes.each do |finish| -%>
+    <tr>
+      <td class="small-text-center"><%= image_tag finish.attachments.first.file.thumb.url if finish.attachments.any? %></td>
+      <td>
+        <%= link_to finish.name, [@organization, @project, finish] %>
+        <br />
+        (<%= finish.comments_count %> comments)
+      </td>
+      <td><%= finish.model %></td>
+      <td>$<%= finish.price %> x <%= finish.quantity %></td>
+      <td>
+        <% if finish.selected? %>
+          <div class="select-desc"><em>By</em> <%= finish.selected_by.name %><br><em>on</em> <%= l finish.selected_at %></div>
+          <% if project_admin_access? %>
+            <%#= link_to fa_icon("ban", text: "Deselect", class: "fa-fw"), [:deselect, @organization, @project, finish], method: :patch, remote: true, class: "tiny button radius",
+              data: { confirm: "Are you sure? This will clear the current selection." } %>
+          <% end %>
+        <% else %>
+          <% if project_member_access? %>
+            <%#= link_to fa_icon("check", text: "Select", class: "fa-fw"), [:select, @organization, @project, finish], method: :patch, remote: true, class: "tiny button radius",
+              data: { confirm: "Are you sure? You will have to contact the managing organzation to undo this selection." } %>
+          <% else %>
+            Not Selected
+          <% end %>
+        <% end %>
+      </td>
+      <td>
+        <%#= link_to fa_icon("list", text: "Details", class: "fa-fw"), [@organization, @project, finish], class: "tiny button radius" %>
+        <% if project_admin_access? %>
+          <%#= link_to fa_icon("pencil", text: "Edit", class: "fa-fw"), [:edit, @organization, @project, finish], class: "tiny button radius" %>
+          <%#= link_to fa_icon("trash-o", text: "Delete", class: "fa-fw"), [@organization, @project, finish],
+                      method: :delete, data: { confirm: "Are you sure?" }, class: "tiny button radius" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end -%>
+  </tbody>
+</table>

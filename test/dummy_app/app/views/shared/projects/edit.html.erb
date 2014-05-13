@@ -1,0 +1,65 @@
+<% content_for :tabbar_title do %>
+  <%= @project.name %>
+<% end %>
+
+<div class="form-panel">
+  <ul class="breadcrumbs">
+    <li><%= link_to @project.name, [@organization, @project] %></li>
+    <li class="current"><a href="#">Edit</a></li>
+  </ul>
+
+  <%= simple_form_for [@organization, @project] do |f| %>
+    <%= f.input :name, required: false %>
+    <%= f.input :location %>
+    <%= f.input :description %>
+    <%= f.button :submit, class: "small button radius right" %>
+  <% end %>
+
+  <div class="clearfix"></div>
+  <div id="project-tabs">
+    <dl class="sub-nav" data-tab data-options="deep_linking:true">
+      <dd class="active"><%#= link_to fa_icon("tags", text: "Categories", class: "fa-fw"), "#categories" %></dd>
+      <dd><%#= link_to fa_icon("map-marker", text: "Areas", class: "fa-fw"), "#areas" %></dd>
+    </dl>
+  </div>
+  <div class="tabs-content">
+    <div class="content active" id="categories">
+      <%#= link_to fa_icon("plus-square" , text: "Add Category", class: "fa-fw"), [:new, @organization, @project, :category] %>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>&nbsp;</th>
+        </tr>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name %></td>
+            <td>
+              <%= link_to "Edit", [:edit, @organization, @project, category], class: "tiny button radius" %>
+              <%= link_to "Delete", [@organization, @project, category],
+                          method: :delete, data: { confirm: "Are you sure?" }, class: "tiny button radius" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="content" id="areas">
+      <%#= link_to fa_icon("plus-square", text: "Add Area", class: "fa-fw"), [:new, @organization, @project, :area] %>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>&nbsp;</th>
+        </tr>
+        <% @areas.each do |area| %>
+          <tr>
+            <td><%= area.name %></td>
+            <td>
+              <%= link_to "Edit", [:edit, @organization, @project, area], class: "tiny button radius" %>
+              <%= link_to "Delete", [@organization, @project, area],
+                          method: :delete, data: { confirm: "Are you sure?" }, class: "tiny button radius" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

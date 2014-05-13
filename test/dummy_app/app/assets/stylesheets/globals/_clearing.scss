@@ -1,0 +1,11 @@
+.clearing-container {
+  padding: 25px 0;
+
+  .visible-img {
+    height: 100%;
+  }
+  .carousel,
+  .disabled {
+    display: none;
+  }
+}

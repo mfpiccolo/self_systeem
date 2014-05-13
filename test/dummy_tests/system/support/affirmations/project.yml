@@ -1,0 +1,201 @@
+---
+:requirements:
+- registration/signup
+:affirmations:
+- :request_method: GET
+  :request_path: "/"
+  :action: index
+  :request_parameters:
+    controller: site
+    action: index
+  :controller_class_name: SiteController
+  :status: 200
+  :partials:
+    shared/_user_links: 1
+    _user_links: 1
+    site/_header: 1
+    _header: 1
+    site/_footer: 1
+    _footer: 1
+  :layouts:
+    layouts/application: 1
+    application: 1
+  :templates:
+    site/index: 1
+    shared/_user_links: 1
+    site/_header: 1
+    site/_footer: 1
+    layouts/application: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\"]"
+  :instance_variable_objects:
+    "@current_user":
+      id: 1
+- :request_method: GET
+  :request_path: "/projects"
+  :action: index
+  :request_parameters:
+    action: index
+    controller: user/projects
+  :controller_class_name: User::ProjectsController
+  :status: 200
+  :partials:
+    kaminari/_paginator: 1
+    _paginator: 1
+    shared/_user_links: 1
+    _user_links: 1
+    shared/_organization_links: 1
+    _organization_links: 1
+    user/_header: 1
+    _header: 1
+    user/_tabbar_links: 2
+    _tabbar_links: 2
+    user/_sidebar: 1
+    _sidebar: 1
+    layouts/_messages: 1
+    _messages: 1
+  :layouts:
+    layouts/user: 1
+    user: 1
+  :templates:
+    shared/projects/index: 1
+    shared/_user_links: 1
+    shared/_organization_links: 1
+    user/_header: 1
+    user/_tabbar_links: 2
+    user/_sidebar: 1
+    layouts/_messages: 1
+    layouts/user: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\", \"@projects\"]"
+  :instance_variable_objects:
+    "@current_user":
+      id: 1
+    "@projects": {}
+- :request_method: GET
+  :request_path: "/projects/new"
+  :action: new
+  :request_parameters:
+    action: new
+    controller: user/projects
+  :controller_class_name: User::ProjectsController
+  :status: 200
+  :partials:
+    shared/_user_links: 1
+    _user_links: 1
+    shared/_organization_links: 1
+    _organization_links: 1
+    user/_header: 1
+    _header: 1
+    user/_tabbar_links: 2
+    _tabbar_links: 2
+    user/_sidebar: 1
+    _sidebar: 1
+    layouts/_messages: 1
+    _messages: 1
+  :layouts:
+    layouts/user: 1
+    user: 1
+  :templates:
+    shared/projects/new: 1
+    shared/_user_links: 1
+    shared/_organization_links: 1
+    user/_header: 1
+    user/_tabbar_links: 2
+    user/_sidebar: 1
+    layouts/_messages: 1
+    layouts/user: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\", \"@project\"]"
+  :instance_variable_objects:
+    "@current_user":
+      id: 1
+    "@project":
+      id:
+- :request_method: POST
+  :request_path: "/projects"
+  :action: create
+  :request_parameters:
+    utf8: "✓"
+    authenticity_token: CXA8cAL6t7Q+OmZes7nk+dtBc2GaaDBoGmTwvLk0gpI=
+    project:
+      name: Some Project
+      location: Test
+      description: test
+    commit: Create Project
+    action: create
+    controller: user/projects
+  :controller_class_name: User::ProjectsController
+  :status: 302
+  :partials: {}
+  :layouts: {}
+  :templates: {}
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\", \"@project\"]"
+  :instance_variable_objects:
+    "@current_user":
+      id: 1
+    "@project":
+      id: 1
+- :request_method: GET
+  :request_path: "/projects/1/finishes"
+  :action: index
+  :request_parameters:
+    action: index
+    controller: user/finishes
+    project_id: '1'
+  :controller_class_name: User::FinishesController
+  :status: 200
+  :partials:
+    shared/_project_tabs: 1
+    _project_tabs: 1
+    shared/finishes/_filter: 1
+    _filter: 1
+    shared/finishes/_finishes: 1
+    _finishes: 1
+    kaminari/_paginator: 1
+    _paginator: 1
+    shared/_user_links: 1
+    _user_links: 1
+    shared/_organization_links: 1
+    _organization_links: 1
+    user/_header: 1
+    _header: 1
+    user/_tabbar_links: 2
+    _tabbar_links: 2
+    user/_sidebar: 1
+    _sidebar: 1
+    layouts/_messages: 1
+    _messages: 1
+  :layouts:
+    layouts/user: 1
+    user: 1
+  :templates:
+    shared/_project_tabs: 1
+    shared/finishes/_filter: 1
+    shared/finishes/_finishes: 1
+    shared/finishes/index: 1
+    shared/_user_links: 1
+    shared/_organization_links: 1
+    user/_header: 1
+    user/_tabbar_links: 2
+    user/_sidebar: 1
+    layouts/_messages: 1
+    layouts/user: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\", \"@project\", \"@areas\", \"@categories\",
+    \"@category_budget\", \"@finishes\", \"@project_access\"]"
+  :instance_variable_objects:
+    "@current_user":
+      id: 1
+    "@project":
+      id: 1
+    "@areas":
+      id: 16
+      project_id: 1
+    "@categories":
+      id: 18
+      project_id: 1
+    "@category_budget": {}
+    "@finishes": {}
+    "@project_access": {}

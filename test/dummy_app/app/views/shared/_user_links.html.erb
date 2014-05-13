@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <li class="has-dropdown">
+    <%#= link_to fa_icon("user", text: current_user.email, class: "fa-fw"), projects_path %>
+    <ul class="dropdown">
+      <li><%#= link_to fa_icon("sign-out", text: "Logout", class: "fa-fw"), logout_path %></li>
+    </ul>
+  </li>
+<% else %>
+  <li><%= link_to "Login", login_path %></li>
+<% end %>

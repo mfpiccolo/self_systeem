@@ -1,0 +1,11 @@
+---
+session_id: d53c4549305e7aaa6c9019582c8fb377
+run_count: 4
+warden.user.user.key:
+- - 1
+- "$2a$10$yZAIN1tfU6Supv4XVvbCmu"
+_csrf_token: CXA8cAL6t7Q+OmZes7nk+dtBc2GaaDBoGmTwvLk0gpI=
+flash:
+  discard: []
+  flashes:
+    notice: Project successfully created.

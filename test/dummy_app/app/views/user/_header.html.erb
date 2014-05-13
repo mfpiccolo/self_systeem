@@ -1,0 +1,17 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to image_tag("logo@2x.png", class: "logo"), projects_path %></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="right">
+      <%= render "shared/user_links" %>
+    </ul>
+    <ul class="left">
+      <%= render "shared/organization_links" %>
+    </ul>
+  </section>
+</nav>

@@ -1,6 +1,28 @@
+development: &dev
+  adapter: postgresql
+  encoding: unicode
+  # database: finishes_development
+  database: finishes_test
+  pool: 5
+  username: <%= ENV["USER"] %>
+  password:
+  allow_concurrency: true
+  min_messages: warning
 
 test:
-  adapter: sqlite3
-  database: ':memory:'
+  adapter: postgresql
+  encoding: unicode
+  database: finishes_test
   pool: 5
-  timeout: 5000
+  username: <%= ENV["USER"] %>
+  password:
+  allow_concurrency: true
+  min_messages: error
+
+staging:
+  <<: *dev
+  database: finishes_development
+
+production:
+  <<: *dev
+  database: finishes_development

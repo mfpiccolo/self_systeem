@@ -1,10 +1,10 @@
 ENV["RAILS_ENV"] = "test"
-# require File.expand_path("../../../../dummy_app/app/config/environment", __FILE__)
 # require "cell/test_case"
 require 'test_helper_dummy'
 require "rails/test_help"
 require "minitest/spec"
 require "database_cleaner"
+
 
 require 'coveralls'
 Coveralls.wear!('rails')
@@ -19,6 +19,12 @@ class ActionController::TestCase
 end
 
 module SysteemConfig
-  Affirmations = YAML.load_file("./test/dummy_tests/system/support/systeem_booster.yml")[:affirmations]
+  Features = Dir["./test/dummy_tests/system/support/affirmations/**/*.yml"].reject {|f| f[/_db|_session/]}
   Session = ActionController::TestSession.new
+end
+
+if defined? Devise::TestHelpers
+  class ActionController::TestCase
+    include Devise::TestHelpers
+  end
 end

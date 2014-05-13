@@ -1,0 +1,26 @@
+body > footer {
+  background: $footer-bg-color;
+  padding: 4rem 0;
+
+  p {
+    color: $footer-text-color !important;
+  }
+
+  ul {
+    list-style-type: none;
+
+    @media #{$large-up} {
+      float: right;
+    }
+
+    li {
+      a {
+        color: $footer-link-color;
+
+        &:hover {
+          color: $footer-link-color;
+        }
+      }
+    }
+  }
+}

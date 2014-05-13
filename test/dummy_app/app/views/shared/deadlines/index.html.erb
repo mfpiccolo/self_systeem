@@ -1,0 +1,50 @@
+<% content_for :tabbar_title do %>
+  <%= @project.name %>
+<% end %>
+
+<%#= render_cell :project, :show, project: @project %>
+
+<%= render "shared/project_tabs" %>
+
+<div class="tabs-panel">
+  <% if project_admin_access? %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%#= link_to fa_icon("plus-square", text: "Add Deadline", class: "fa-fw"), [:new, @organization, @project, :deadline] %>
+      </div>
+    </div>
+  <% end %>
+  <table class="responsive">
+    <thead>
+    <tr>
+      <th>Status</th>
+      <th>Area</th>
+      <th>Category</th>
+      <th>Due Date</th>
+      <th>Selection Count</th>
+      <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @deadlines.each do |deadline| -%>
+      <tr>
+        <td><%= status_icon(deadline.status) %></td>
+        <td><%= deadline.area.try(:name) %></td>
+        <td><%= deadline.category.try(:name) %></td>
+        <td><%= deadline.due_date %></td>
+        <td><%= deadline.selection_count %></td>
+        <td>
+          <%#= link_to fa_icon("list", text: "Details", class: "fa-fw"), [@organization, @project, deadline], class: "tiny button radius" %>
+          <% if project_admin_access? %>
+            <%#= link_to fa_icon("pencil", text: "Edit", class: "fa-fw"), [:edit, @organization, @project, deadline], class: "tiny button radius" %>
+            <%#= link_to fa_icon("trash-o", text: "Delete", class: "fa-fw"), [@organization, @project, deadline],
+              method: :delete, data: { confirm: "Are you sure?" }, class: "tiny button radius" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end -%>
+    </tbody>
+  </table>
+
+  <%#= paginate @deadlines %>
+</div>

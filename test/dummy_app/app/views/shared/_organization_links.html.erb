@@ -1,0 +1,23 @@
+<% if current_user.organizations.any? %>
+  <li class="has-dropdown">
+    <% if @organization.blank? || @organization.new_record? %>
+      <%= link_to current_user.email, projects_path %>
+    <% else %>
+      <%= link_to @organization.name, organization_path(@organization) %>
+    <% end %>
+    <ul class="dropdown">
+      <% unless @organization.blank? || @organization.new_record? %>
+        <li><%= link_to current_user.email, projects_path %></li>
+      <% end %>
+      <% current_user.organizations.each do |o| %>
+        <% unless @organization == o %>
+          <li><%= link_to o.name, organization_path(o) %></li>
+        <% end %>
+      <% end %>
+      <li class="divider"></li>
+      <li><%#= link_to fa_icon("plus-square", text: "New Organization", class: "fa-fw"), new_organization_path %></li>
+    </ul>
+  </li>
+<% else %>
+  <li><%#= link_to fa_icon("plus-square", text: "New Organization", class: "fa-fw"), new_organization_path %></li>
+<% end %>

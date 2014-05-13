@@ -1,0 +1,76 @@
+.header {
+  &.about {
+    background: image-url('site/about/header.jpg') center / cover ;
+    min-height: rem-calc(132);
+    padding: rem-calc(40) 0;
+
+    h1 {
+      color: #15294a;
+    }
+  }
+}
+
+#about-title {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+#works-wrap {
+  margin-bottom: rem-calc(20);
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+.works-block {
+  color: #fff;
+  font-family: 'Roboto Slab', serif;
+  height: 50%;
+  padding: rem-calc(38) rem-calc(20);
+  position: absolute;
+  width: 50%;
+
+  &#create {
+    background: #0886bf;
+    left: 0;
+    top: 0;
+  }
+
+  &#review {
+    background: #0399de;
+    right: 0;
+    top: 0;
+  }
+
+  &#approve {
+    background: #0ea3e7;
+    bottom: 0;
+    left: 0;
+  }
+
+  &#purchase {
+    background: #00afff;
+    bottom: 0;
+    right: 0;
+  }
+
+  div {
+    background: rgba(0, 0, 0, 0.1);
+    font-size: rem-calc(18);
+    height: rem-calc(30);
+    line-height: rem-calc(30);
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: rem-calc(30);
+  }
+
+  img {
+    display: block;
+    margin: rem-calc(20) auto;
+  }
+}

@@ -1,0 +1,46 @@
+<h3>Attachments</h3>
+<%#= link_to fa_icon("plus-square", text: "Add Attachment", class: "fa-fw"), "javascript: $('#attachment-form').toggle();" %>
+<div id="attachment-form" class="hide">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="panel">
+        <%= simple_form_for ProjectAttachment.new(finish: finish), url: [organization, project, :attachments], multipart: true do |f| %>
+          <%= f.hidden_field :finish_id %>
+          <%= f.input :file, as: :file, label: "Add an attachment", required: false %>
+
+          <%= f.submit "Add Attachment", class: "tiny button radius" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Preview</th>
+    <th>File</th>
+    <% if project_member_access? %>
+      <th>&nbsp;</th>
+    <% end %>
+  </tr>
+  </thead>
+  <tbody>
+  <% attachments.each do |attachment| -%>
+    <tr>
+      <td>
+        <%= attachment_preview attachment %>
+      </td>
+      <td><%= link_to attachment.file.display_name, attachment.file.url %></td>
+      <% if project_member_access? %>
+        <td>
+          <%= link_to "Delete", [organization, project, :attachment, id: attachment],
+                      method: :delete, data: { confirm: "Are you sure?" }, class: "tiny button radius" %>
+        </td>
+      <% end %>
+    </tr>
+  <% end -%>
+  </tbody>
+</table>
+
+

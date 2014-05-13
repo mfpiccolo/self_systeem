@@ -1,0 +1,41 @@
+#project-info {
+  background: #fff;
+  border: 1px solid $info-border-color;
+
+  h2 {
+    background: $h2-bg-color;
+    border-bottom: 1px solid $info-border-color;
+    color: $h2-color;
+    font-size: rem-calc(20);
+    font-weight: 200;
+    margin-top: 0;
+    padding: rem-calc(14) rem-calc(17);
+  }
+
+  .project-info-inner {
+    padding: 0 rem-calc(17) 0 rem-calc(17);
+  }
+
+  p {
+    font-size: rem-calc(14);
+  }
+
+  img {
+    margin-bottom: rem-calc(20);
+  }
+
+  #current-balance {
+    background: $info-balance-bg-color;
+    color: #fff;
+    margin: rem-calc(15) 0;
+    padding: rem-calc(14) rem-calc(17);
+
+    h4 {
+      color: $info-balance-color;
+    }
+
+    span {
+       font-size: rem-calc(36);
+    }
+  }
+}

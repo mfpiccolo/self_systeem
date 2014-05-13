@@ -1,0 +1,50 @@
+<% content_for :tabbar_title do %>
+  Deadline Details
+<% end %>
+
+<div class="form-panel clearfix">
+  <ul class="breadcrumbs">
+    <li><%= link_to @project.name, [@organization, @project] %></li>
+    <li><%= link_to "Deadlines", [@organization, @project, :deadlines] %></li>
+    <li class="current"><a href="#">Details</a></li>
+  </ul>
+
+  <div class="row-pad">
+    <%#= link_to fa_icon("pencil", text: "Edit", class: "fa-fw"), [:edit, @organization, @project, @deadline], class: "right" %>
+    <div class="row">
+      <div class="small-3 columns">
+        <strong>Area</strong>
+
+        <p>
+          <%= @deadline.area.name %>
+        </p>
+      </div>
+      <div class="small-3 columns">
+        <strong>Category</strong>
+
+        <p>
+          <%= @deadline.category.name %>
+        </p>
+      </div>
+      <div class="small-3 columns">
+        <strong>Due Date</strong>
+
+        <p>
+          <%= @deadline.due_date %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-9 columns">
+        <strong>Description</strong>
+
+        <p>
+          <%= simple_format @deadline.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <%= render "shared/finishes/finishes", finishes: @finishes %>
+</div>

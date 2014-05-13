@@ -1,0 +1,30 @@
+<% content_for :tabbar_title do %>
+  <%= @project.name %>
+<% end %>
+
+<%#= render_cell :project, :show, project: @project %>
+
+<%= render "shared/project_tabs" %>
+
+<div class="tabs-panel">
+  <div class="row">
+    <div class="small-12 large-5 columns">
+      <strong>Budget: <%= number_to_currency @category_budget %></strong>
+    </div>
+    <div class="small-12 large-7 columns">
+      <div class="row">
+        <%= render "shared/finishes/filter" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <% if project_collaborator_access? %>
+        <%#= link_to fa_icon("plus-square", text: "Add Finish", class: "fa-fw"), [:new, @organization, @project, :finish] %>
+      <% end %>
+    </div>
+  </div>
+  <%= render "shared/finishes/finishes" %>
+
+  <%#= paginate @finishes %>
+</div>

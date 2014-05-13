@@ -1,0 +1,63 @@
+
+
+h2 {
+  color: #232323;
+  font-size: rem-calc(32);
+  font-weight: 100;
+}
+
+h3 {
+  color: #232323;
+  font-family: 'Roboto Slab', serif;
+  font-size: rem-calc(20);
+}
+
+p {
+  color: #727272;
+  line-height: 200%;
+}
+
+section:not(.top-bar-section) {
+  padding: {
+    bottom: rem-calc(46);
+    top: rem-calc(66);
+  }
+
+  &.dark {
+    @include box-shadow(0 0 0 1px rgba(164, 174, 178, .5));
+    background-color: #f8f8f8;
+  }
+}
+
+blockquote {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: rem-calc(24);
+  font-style: italic;
+  padding-left: rem-calc(40);
+  position: relative;
+
+  span {
+    &:before {
+      content: open-quote;
+      font-size: rem-calc(72);
+      left: rem-calc(-4);
+      position: absolute;
+      top: rem-calc(-10);
+    }
+
+    &:after {
+      bottom: rem-calc(-2);
+      content: close-quote;
+      font-size: rem-calc(72);
+      position: absolute;
+    }
+  }
+
+  cite {
+    font-size: rem-calc(16);
+
+    &:before {
+      display: none;
+    }
+  }
+}

@@ -28,4 +28,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "sqlite3", "~> 1.3"
   spec.add_development_dependency "pry", "~> 0.9"
   spec.add_development_dependency "pry-debugger", "~> 0.2"
+  spec.add_development_dependency "devise"
+  spec.add_development_dependency "devise_invitable"
+  spec.add_development_dependency "pg"
+  spec.add_development_dependency "money-rails"
+  spec.add_development_dependency "simple_form"
+  spec.add_development_dependency "cells", "~> 3.10.0"
+  spec.add_development_dependency "sass"
+  spec.add_development_dependency "compass"
 end

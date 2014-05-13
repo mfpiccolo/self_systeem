@@ -1,0 +1,43 @@
+#hero {
+  background: image-url('site/index/hero.jpg') center / cover no-repeat;
+  padding: {
+    bottom: rem-calc(91);
+    top: rem-calc(108);
+  }
+
+  #intro {
+    background: rgba(255, 255, 255, 0.9);
+    padding: rem-calc(21) rem-calc(27) rem-calc(21);
+
+    h1 {
+      color: #444647;
+      font-size: rem-calc(46);
+      font-weight: 100;
+    }
+
+    p {
+      color: #707273;
+      font-size: rem-cacl(18);
+    }
+
+    span {
+      color: #75797b;
+      display: block;
+      font-size: rem-calc(12);
+      margin-bottom: rem-calc(16);
+    }
+
+    .button {
+      padding: {
+        bottom: rem-calc(21);
+        top: rem-calc(20);
+      }
+    }
+  }
+}
+
+#project-management {
+  h2 {
+    margin-bottom: rem-calc(65);
+  }
+}

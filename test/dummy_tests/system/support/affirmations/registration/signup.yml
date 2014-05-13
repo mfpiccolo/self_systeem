@@ -1,0 +1,110 @@
+---
+:requirements: []
+:affirmations:
+- :request_method: GET
+  :request_path: "/ba586033c88c2216a/signup"
+  :action: new
+  :request_parameters:
+    controller: devise/registrations
+    action: new
+  :controller_class_name: Devise::RegistrationsController
+  :status: 200
+  :partials:
+    devise/shared/_links: 1
+    _links: 1
+    shared/_user_links: 1
+    _user_links: 1
+    site/_header: 1
+    _header: 1
+    site/_footer: 1
+    _footer: 1
+  :layouts:
+    layouts/application: 1
+    application: 1
+  :templates:
+    devise/shared/_links: 1
+    devise/registrations/new: 1
+    shared/_user_links: 1
+    site/_header: 1
+    site/_footer: 1
+    layouts/application: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@devise_mapping\", \"@request_format\", \"@devise_parameter_sanitizer\",
+    \"@user\", \"@current_user\"]"
+  :instance_variable_objects:
+    "@devise_mapping": {}
+    "@request_format": {}
+    "@devise_parameter_sanitizer": {}
+    "@user":
+      id:
+    "@current_user": {}
+- :request_method: POST
+  :request_path: "/users"
+  :action: create
+  :request_parameters:
+    utf8: "✓"
+    authenticity_token: XvbcpxEFv7gQO4aME+wVbreHj/MPP5C+g/LL8xRpcXY=
+    user:
+      name: Test Guy
+      email: test@guy.com
+      password: password1234
+      password_confirmation: password1234
+    commit: Sign up
+    action: create
+    controller: devise_invitable/registrations
+    controller: devise_invitable/registrations
+  :controller_class_name: DeviseInvitable::RegistrationsController
+  :status: 302
+  :partials: {}
+  :layouts: {}
+  :templates: {}
+  :files: {}
+  :relevant_instance_varaibles: "[\"@devise_mapping\", \"@request_format\", \"@devise_parameter_sanitizer\",
+    \"@user\"]"
+  :instance_variable_objects:
+    "@devise_mapping": {}
+    "@request_format": {}
+    "@devise_parameter_sanitizer": {}
+    "@user":
+      id: 1
+- :request_method: GET
+  :request_path: "/projects"
+  :action: index
+  :request_parameters:
+    action: index
+    controller: user/projects
+  :controller_class_name: User::ProjectsController
+  :status: 200
+  :partials:
+    kaminari/_paginator: 1
+    _paginator: 1
+    shared/_user_links: 1
+    _user_links: 1
+    shared/_organization_links: 1
+    _organization_links: 1
+    user/_header: 1
+    _header: 1
+    user/_tabbar_links: 2
+    _tabbar_links: 2
+    user/_sidebar: 1
+    _sidebar: 1
+    layouts/_messages: 1
+    _messages: 1
+  :layouts:
+    layouts/user: 1
+    user: 1
+  :templates:
+    shared/projects/index: 1
+    shared/_user_links: 1
+    shared/_organization_links: 1
+    user/_header: 1
+    user/_tabbar_links: 2
+    user/_sidebar: 1
+    layouts/_messages: 1
+    layouts/user: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\", \"@projects\"]"
+  :instance_variable_objects:
+    "@current_user":
+      id: 1
+    "@projects": {}

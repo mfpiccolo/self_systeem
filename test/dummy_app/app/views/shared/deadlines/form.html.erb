@@ -1,0 +1,30 @@
+<% content_for :tabbar_title do %>
+  <%= @project.name %>
+<% end %>
+
+<div class="form-panel clearfix">
+  <ul class="breadcrumbs">
+    <li><%= link_to @project.name, [@organization, @project] %></li>
+    <li><%= link_to "Deadlines", [@organization, @project, :deadlines] %></li>
+    <li class="current"><a href="#"><%= @deadline.new_record? ? "New" : "Edit" %> Area</a></li>
+  </ul>
+
+  <%= simple_form_for [@organization, @project, @deadline] do |f| %>
+
+    <div class="row">
+      <div class="small-12 large-4 columns">
+        <%= f.input :area_id, collection: @areas.map { |a| [a.name, a.id] } %>
+      </div>
+      <div class="small-12 large-4 columns">
+        <%= f.input :category_id, collection: @categories.map { |c| [c.name, c.id] } %>
+      </div>
+      <div class="small-12 large-4 columns">
+        <%= f.input :due_date, as: :datepicker, order: [:month, :day, :year] %>
+      </div>
+    </div>
+    <%= f.input :description %>
+
+
+    <%= f.button :submit, class: "button radius right" %>
+  <% end %>
+</div>

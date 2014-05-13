@@ -1,0 +1,23 @@
+.status-icon {
+  @include border-radius(50%);
+  border: 1px solid #ddd;
+  display: block;
+  height: rem-calc(20);
+  width: rem-calc(20);
+
+  &.green {
+    background: #009926;
+  }
+
+  &.yellow {
+    background: #fffd47;
+  }
+
+  &.orange {
+    background: #ffcc00;
+  }
+
+  &.red {
+    background: #cd0a0a;
+  }
+}

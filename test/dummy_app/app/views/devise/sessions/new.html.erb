@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="small-12 large-6 large-centered columns">
+    <div class="auth panel radius">
+      <h2>Login</h2>
+
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div>
+          <%= f.label :email %>
+          <%= f.email_field :email, :autofocus => true %>
+        </div>
+
+        <div>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+        <% end -%>
+
+        <div class="row">
+          <div class="small-12 large-6 columns">
+            <%= f.submit "Sign in", class: "button" %>
+          </div>
+          <div class="small-12 large-6 columns">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

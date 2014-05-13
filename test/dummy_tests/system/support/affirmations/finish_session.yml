@@ -1,0 +1,11 @@
+---
+session_id: c72dfd269fe6c95041d36a6063030168
+run_count: 6
+warden.user.user.key:
+- - 1
+- "$2a$10$yZAIN1tfU6Supv4XVvbCmu"
+_csrf_token: g7BncVnkf7EMkV2q43ghaJF/daigNaE4KHOi41BJELo=
+flash:
+  discard: []
+  flashes:
+    notice: Finish successfully added.

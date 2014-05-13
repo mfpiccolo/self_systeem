@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="small-12 large-6 large-centered columns">
+    <div class="auth panel radius">
+      <h2>Confirm Invite</h2>
+
+      <%= simple_form_for(@user, url: accept_invitation_path(@user.invitation_token), method: :patch) do |f| %>
+        <%= f.input :password %>
+        <%= f.input :password_confirmation %>
+        <div class="row">
+          <div class="small-12 large-6 columns">
+            <%= f.submit "Accept", class: "button" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<% content_for :tabbar_title do %>
+  Finish Details
+<% end %>
+
+<div class="form-panel clearfix">
+  <ul class="breadcrumbs">
+    <li><%= link_to @project.name, [@organization, @project] %></li>
+    <li><%= link_to "Finishes", [@organization, @project, :finishes] %></li>
+    <li class="current"><a href="#"><%= @finish.name %></a></li>
+  </ul>
+
+  <div class="row-pad">
+    <% if project_admin_access? %>
+      <%#= link_to fa_icon("pencil", text: "Edit", class: "fa-fw"), [:edit, @organization, @project, @finish], class: "right" %>
+    <% end %>
+    <div class="row">
+      <div class="small-12 large-4 columns">
+        <h4>Area</h4>
+
+        <p>
+          <%= @finish.area ? @finish.area.name : "---" %>
+        </p>
+      </div>
+      <div class="small-12 large-4 columns">
+        <h4>Category</h4>
+
+        <p>
+          <%= @finish.category ? @finish.category.name : "---" %>
+        </p>
+      </div>
+      <div class="small-12 large-4 columns">
+        <h4>Location</h4>
+
+        <p>
+          <%= @finish.location %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 large-4 columns">
+        <h4>Model</h4>
+
+        <p>
+          <%= @finish.model %>
+        </p>
+      </div>
+      <div class="small-12 large-4 columns">
+        <h4>Quantity</h4>
+
+        <p>
+          <%= @finish.quantity %>
+        </p>
+      </div>
+      <div class="small-12 large-4 columns">
+        <h4>Price</h4>
+
+        <p>
+          <%= number_to_currency @finish.price %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <h4>Description</h4>
+
+        <p>
+          <%= @finish.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <%= render "shared/finishes/attachments", organization: @organization,
+             project: @project, finish: @finish, attachments: @finish.attachments %>
+  <%= render "shared/comments/comments", organization: @organization,
+             project: @project, finish: @finish, comments: @comments %>
+</div>

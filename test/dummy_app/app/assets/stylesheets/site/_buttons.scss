@@ -1,0 +1,10 @@
+.button {
+  @include box-shadow(0 2px 0 #126d8f);
+  background: #22a9e1;
+  font-family: 'Roboto Slab', serif;
+
+  &.gray {
+    @include box-shadow(0 2px 0 #8f999d);
+    background: #b6bbbe;
+  }
+}

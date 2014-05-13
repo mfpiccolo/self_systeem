@@ -1,0 +1,30 @@
+.top-bar-section {
+  ul.left {
+    a, & li:hover a {
+      color: $header-org-links-color;
+      font-weight: bold;
+
+      &:after {
+        border-color: $header-org-links-color transparent transparent transparent;
+      }
+    }
+  }
+
+  i {
+    color: $header-icons-color;
+    font-size: rem-calc(18);
+  }
+}
+
+.toggle-topbar {
+  &.menu-icon {
+    a {
+      &:after {
+        @include box-shadow(none !important);
+        content: '\f013' !important;
+        font-family: 'FontAwesome';
+        font-size: rem-calc(22);
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<% content_for :tabbar_title do %>
+  <%= @comment.new_record? ? "New" : "Edit" %> Comment
+<% end %>
+
+<div class="form-panel clearfix">
+  <ul class="breadcrumbs">
+    <li><%= link_to @project.name, [@organization, @project] %></li>
+    <li><%= link_to "Finishes", [@organization, @project, :finishes] %></li>
+    <li><%= link_to @finish.name, [@organization, @project, @finish] %></li>
+    <% if @comment.new_record? -%>
+      <li class="current"><a href="#">New Comment</a></li>
+    <% else -%>
+      <li class="current"><a href="#">Edit Comment</a></li>
+    <% end -%>
+  </ul>
+
+  <%= simple_form_for [@organization, @project, @finish, @comment] do |f| %>
+    <%= f.input :body %>
+
+    <%= f.button :submit, class: "small button radius right" %>
+  <% end %>
+</div>

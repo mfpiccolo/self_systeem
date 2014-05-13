@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="small-12 large-6 large-centered columns">
+    <div class="auth panel radius">
+      <h2>Forgot your password?</h2>
+
+      <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div><%= f.label :email %>
+          <br/>
+          <%= f.email_field :email, :autofocus => true %></div>
+
+        <div><%= f.submit "Send me reset password instructions", class: "button expand" %></div>
+      <% end %>
+
+      <div class="inline">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
