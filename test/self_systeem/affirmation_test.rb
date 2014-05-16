@@ -14,14 +14,12 @@ describe SiteController do
   end
 
   it {
-    assert !(File.exists?(@path + "some_feature.yml"))
     assert !(File.exists?(@path + "some_feature_db.yml"))
     assert !(File.exists?(@path + "some_feature_session.yml"))
     @ab.call(@request.env)
     assert File.exists?(@path + "some_feature.yml")
     assert File.exists?(@path + "some_feature_db.yml")
     assert File.exists?(@path + "some_feature_session.yml")
-    File.delete(@path + "some_feature.yml")
     File.delete(@path + "some_feature_db.yml")
     File.delete(@path + "some_feature_session.yml")
   }
