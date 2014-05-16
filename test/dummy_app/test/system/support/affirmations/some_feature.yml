@@ -1,0 +1,228 @@
+---
+:requirements:
+- registration/signup
+:affirmations:
+- :request_method: GET
+  :request_path: "/"
+  :action: index
+  :request_parameters:
+    controller: site
+    action: index
+  :controller_class_name: SiteController
+  :status: 200
+  :partials:
+    shared/_user_links: 1
+    _user_links: 1
+    site/_header: 1
+    _header: 1
+    site/_footer: 1
+    _footer: 1
+  :layouts:
+    layouts/application: 1
+    application: 1
+  :templates:
+    site/index: 1
+    shared/_user_links: 1
+    site/_header: 1
+    site/_footer: 1
+    layouts/application: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\"]"
+  :instance_variable_objects:
+    "@current_user": {}
+- :request_method: GET
+  :request_path: "/"
+  :action: index
+  :request_parameters:
+    controller: site
+    action: index
+  :controller_class_name: SiteController
+  :status: 200
+  :partials:
+    shared/_user_links: 1
+    _user_links: 1
+    site/_header: 1
+    _header: 1
+    site/_footer: 1
+    _footer: 1
+  :layouts:
+    layouts/application: 1
+    application: 1
+  :templates:
+    site/index: 1
+    shared/_user_links: 1
+    site/_header: 1
+    site/_footer: 1
+    layouts/application: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\"]"
+  :instance_variable_objects:
+    "@current_user": {}
+- :request_method: GET
+  :request_path: "/"
+  :action: index
+  :request_parameters:
+    controller: site
+    action: index
+  :controller_class_name: SiteController
+  :status: 200
+  :partials:
+    shared/_user_links: 1
+    _user_links: 1
+    site/_header: 1
+    _header: 1
+    site/_footer: 1
+    _footer: 1
+  :layouts:
+    layouts/application: 1
+    application: 1
+  :templates:
+    site/index: 1
+    shared/_user_links: 1
+    site/_header: 1
+    site/_footer: 1
+    layouts/application: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\"]"
+  :instance_variable_objects:
+    "@current_user": {}
+- :request_method: GET
+  :request_path: "/"
+  :action: index
+  :request_parameters:
+    controller: site
+    action: index
+  :controller_class_name: SiteController
+  :status: 200
+  :partials:
+    shared/_user_links: 1
+    _user_links: 1
+    site/_header: 1
+    _header: 1
+    site/_footer: 1
+    _footer: 1
+  :layouts:
+    layouts/application: 1
+    application: 1
+  :templates:
+    site/index: 1
+    shared/_user_links: 1
+    site/_header: 1
+    site/_footer: 1
+    layouts/application: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\"]"
+  :instance_variable_objects:
+    "@current_user": {}
+- :request_method: GET
+  :request_path: "/"
+  :action: index
+  :request_parameters:
+    controller: site
+    action: index
+  :controller_class_name: SiteController
+  :status: 200
+  :partials:
+    shared/_user_links: 1
+    _user_links: 1
+    site/_header: 1
+    _header: 1
+    site/_footer: 1
+    _footer: 1
+  :layouts:
+    layouts/application: 1
+    application: 1
+  :templates:
+    site/index: 1
+    shared/_user_links: 1
+    site/_header: 1
+    site/_footer: 1
+    layouts/application: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\"]"
+  :instance_variable_objects:
+    "@current_user": {}
+- :request_method: GET
+  :request_path: "/"
+  :action: index
+  :request_parameters:
+    controller: site
+    action: index
+  :controller_class_name: SiteController
+  :status: 200
+  :partials:
+    shared/_user_links: 1
+    _user_links: 1
+    site/_header: 1
+    _header: 1
+    site/_footer: 1
+    _footer: 1
+  :layouts:
+    layouts/application: 1
+    application: 1
+  :templates:
+    site/index: 1
+    shared/_user_links: 1
+    site/_header: 1
+    site/_footer: 1
+    layouts/application: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\"]"
+  :instance_variable_objects:
+    "@current_user": {}
+- :request_method: GET
+  :request_path: "/"
+  :action: index
+  :request_parameters:
+    controller: site
+    action: index
+  :controller_class_name: SiteController
+  :status: 200
+  :partials:
+    shared/_user_links: 1
+    _user_links: 1
+    site/_header: 1
+    _header: 1
+    site/_footer: 1
+    _footer: 1
+  :layouts:
+    layouts/application: 1
+    application: 1
+  :templates:
+    site/index: 1
+    shared/_user_links: 1
+    site/_header: 1
+    site/_footer: 1
+    layouts/application: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\"]"
+  :instance_variable_objects:
+    "@current_user": {}
+- :request_method: GET
+  :request_path: "/"
+  :action: index
+  :request_parameters:
+    controller: site
+    action: index
+  :controller_class_name: SiteController
+  :status: 200
+  :partials:
+    shared/_user_links: 1
+    _user_links: 1
+    site/_header: 1
+    _header: 1
+    site/_footer: 1
+    _footer: 1
+  :layouts:
+    layouts/application: 1
+    application: 1
+  :templates:
+    site/index: 1
+    shared/_user_links: 1
+    site/_header: 1
+    site/_footer: 1
+    layouts/application: 1
+  :files: {}
+  :relevant_instance_varaibles: "[\"@current_user\"]"
+  :instance_variable_objects:
+    "@current_user": {}
