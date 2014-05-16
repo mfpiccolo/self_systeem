@@ -37,5 +37,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "sass"
   spec.add_development_dependency "compass"
   spec.add_development_dependency "foreigner"
-  spec.add_development_dependency "mocha"
+  # spec.add_development_dependency "mocha"
 end
