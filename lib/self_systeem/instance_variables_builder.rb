@@ -13,6 +13,12 @@ module SelfSysteem
       self
     end
 
+    def self.call(controller)
+      new(controller).call
+    end
+
+    private
+
     def build_variables
       @relevant_instance_varaibles = controller
         .instance_variable_names.reject {|v| v[/@_/] || v == "@marked_for_same_origin_verification"}
@@ -52,10 +58,6 @@ module SelfSysteem
       transform_hash(hash, :deep => true) {|hash, key, value|
         hash[key] = value if (value.is_a?(Hash) || key.to_s.match(regex) )
       }
-    end
-
-    def self.call(controller)
-      new(controller).call
     end
 
   end
