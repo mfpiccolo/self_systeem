@@ -28,7 +28,7 @@ self_systeem allows you to record a users interaction with your rails app in a
 development enviornment and automatically creates system tests based on the
 recordings.
 
-It is simple.  Walk through the app from sart to finish.  Cover as much as you
+It is simple.  Walk through the app from start to finish.  Cover as much as you
 feel comfortable.  That's it.  You just built a system test.  Congrats!
 
 ## Functionality
